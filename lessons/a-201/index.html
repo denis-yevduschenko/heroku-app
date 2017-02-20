@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html ng-app="sampleApp">
+<head> 
+	<title>ng-hide & ng-show</title>
+	<script src="/js/libs/angular.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-theme.css">
+	<script>
+		var sampleApp = angular.module("sampleApp", []);
+
+		sampleApp.controller("sampleAppCtrl", function($scope){
+			$scope.hideElem1 = false;
+			$scope.hideElem2 = false;
+			$scope.hideElem3 = false;
+			$scope.showElem1 = false;
+			$scope.showElem2 = false;
+			$scope.showElem3 = false;
+			$scope.removeElem1 = true;
+			$scope.removeElem2 = true;
+			$scope.removeElem3 = true;
+		});
+	</script>
+
+	<style>
+		div{
+			display: inline-block;
+			border: 1px solid gray;
+			border-radius: 3px;
+			margin: 14px;
+			padding: 30px;
+		}
+		#d1{
+			background-color: lightgreen;
+		}
+		#d2{
+			background-color: lightblue;
+		}
+		#d3{
+			background-color: lightcoral;
+		}
+		#s3{
+			background-color: lightgreen;
+		}
+		#s1{
+			background-color: lightblue;
+		}
+		#s2{
+			background-color: lightcoral;
+		}
+	</style>
+</head>
+
+<body ng-controller="sampleAppCtrl">
+	<h2>Hide</h2>
+	<div>
+		<input type="checkbox" ng-model="hideElem1"> Hide Element 1<br>
+		<input type="checkbox" ng-model="hideElem2"> Hide Element 2<br>
+		<input type="checkbox" ng-model="hideElem3"> Hide Element 3<br>
+	</div>
+
+	<div id="d1" ng-hide="hideElem1"></div>
+	<div id="d2" ng-hide="hideElem2"></div>
+	<div id="d3" ng-hide="hideElem3"></div>
+	<br>
+	<h2>Show</h2>
+	<div>
+		<input type="checkbox" ng-model="showElem1"> Show Element 1<br>
+		<input type="checkbox" ng-model="showElem2"> Show Element 2<br>
+		<input type="checkbox" ng-model="showElem3"> Show Element 3<br>
+	</div>
+
+	<div id="s1" ng-show="showElem1"></div>
+	<div id="s2" ng-show="showElem2"></div>
+	<div id="s3" ng-show="showElem3"></div>
+	<br>
+	<h2>Remove</h2>
+	<div>
+		<input type="checkbox" ng-model="removeElem1"> Show Element 1<br>
+		<input type="checkbox" ng-model="removeElem2"> Show Element 2<br>
+		<input type="checkbox" ng-model="removeElem3"> Show Element 3<br>
+	</div>
+
+	<div id="s1" ng-if="removeElem1"></div>
+	<div id="s2" ng-if="removeElem2"></div>
+	<div id="s3" ng-if="removeElem3"></div>
+</body>

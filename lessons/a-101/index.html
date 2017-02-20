@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html ng-app="sampleApp">
+<head> 
+	<title>Course list</title>
+	<script src="/js/libs/angular.js"></script>
+	<script>
+		var sampleApp = angular.module("sampleApp", []);
+
+		sampleApp.controller("sampleAppCtrl", function($scope){
+			$scope.items = [{ name: "HTML,CSS", passed: true },
+				{ name: "Angular", passed: true },
+				{ name: "jQuery", passed: true },
+				{ name: "Backbone.js", passed: false },
+				{ name: "Symfony", passed: false }]
+		});
+	</script>
+</head>
+
+<body>
+	<div class="container" ng-controller="sampleAppCtrl">
+		<div> There are {{items.length}} items.</div>
+
+		<div>
+			<!-- ng-bind replace html tag => value -->
+			There are <span ng-bind="items.length"></span> items. (ng-bind)
+		</div>
+
+		<div ng-bind-template="First el: {{items[0].name}}. Second el: {{items[1].name}}"></div>
+
+		<div ng-non-bindable>
+			AngularJS uses {{and}} characters for templates.<br>
+			{{items[0].name}} - it doesn't work with derective "ng-non-bindable".
+		</div>
+	</div>
+</body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html ng-app="exampleApp">
+<head> 
+	<title>Filters</title>
+	<script src="/js/libs/angular.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-theme.css">
+	<script>
+		var sampleApp = angular.module("exampleApp", [])
+			.controller("defaulCtrl", function($scope){
+				$scope.items = [
+					{name: "Item 1", price: 10.0, category: "Category 1", count: 10, tax: 1.12, expiration: 10},
+					{name: "Item 2", price: 1.1, category: "Category 1", count: 2, tax: 0.53, expiration: 12},
+					{name: "Item 3", price: 2.6, category: "Category 2", count: 8, tax: 0.8, expiration: 5},
+					{name: "Item 4", price: 7.5, category: "Category 2", count: 40, tax: 2.72, expiration: 20},
+				];
+				$scope.sortedBy = undefined;
+				$scope.reverse = false;
+
+				$scope.sort = function(fieldName){
+					if ($scope.sortedBy === fieldName){
+						$scope.reverse = !$scope.reverse;
+					} else {
+						$scope.sortedBy = fieldName;
+						$scope.reverse = false;
+					}
+				}
+			});
+	</script>
+</head>
+
+<body ng-controller="defaulCtrl">
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3>
+					Items in cart
+					<span class="label label-info">{{items.length}}</span>
+				</h3>
+			</div>
+			<div class="container">
+				<label for="search">Search</label>
+				<input class="search" type="text" ng-model="query">
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Category</th>
+						<th>Count</th>
+						<th>Tax</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items | filter:query">
+						<td>{{item.name}}</td>
+						<td>{{item.price | currency}}</td>
+						<!--<td>{{item.price | currency : UAH}}</td>-->
+						<td>{{item.category | uppercase}}</td>
+						<td>{{item.count}}</td>
+						<td>{{item.tax}}</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		<div>Views: {{10000000 | number:3}}</div>
+		<div>Json: <pre>{{items | json}}</pre></div>
+		<a href="" ng-click="sort('count')">Count</a>
+		<div >
+			<p ng-repeat="item in items | orderBy:sortedBy:reverse">
+				Name: {{item.name}}. Quantity: {{item.count}}
+			</p>
+		</div>
+	</div>
+</body>

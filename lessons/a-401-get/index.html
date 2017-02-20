@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html ng-app="phonesApp">
+<head> 
+	<title>Filters</title>
+	<script src="/js/libs/angular.js"></script>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-theme.css">
+	<script>
+		var phonesApp = angular.module("phonesApp", [])
+			.controller("phonesCtrl", function($scope, $http ){
+
+				$http.get('/data/phones.json').then(function(response){
+					console.log("This is data: ", response.data, 
+								"\n\nThis is status: ", response.status, 
+								"\n\nThis is headers: ", response.headers, 
+								"\n\nThis is config: ", response.config);
+
+					$scope.phones = response.data;
+				});
+
+			});
+	</script>
+</head>
+
+<body ng-controller="phonesCtrl">
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3>
+					Phones list
+					<span class="label label-info">{{phones.length}}</span>
+				</h3>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Description</th>
+						<th>Available</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="phone in phones">
+						<td>{{phone.id}}</td>
+						<td>{{phone.name}}</td>
+						<td>{{phone.age}}</td>
+						<td>{{phone.snippet}}</td>
+						<td>
+							<span class="label"
+								ng-init="status = phone.status ? 'In stock' : 'Out of stock'"
+								ng-class="{'label-success': phone.status, 'label-warning': !phone.status}">
+								{{status}}
+							</span>
+						</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+	</div>
+</body>
