@@ -2,17 +2,16 @@
 
 <html ng-app="CofenatorApp">
 <head>
-    <title>Filters</title>
+    <title>Coffeenator App</title>
     <script src="/js/libs/jquery-3.1.1.min.js"></script>
     <script src="/js/libs/angular.js"></script>
-    <script src="/js/libs/parallax.min.js"></script>
     <script src="/js/libs/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="/css/masonry.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/header.css">
-
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <!--menu-->
 <div class="header_top"></div>
@@ -47,19 +46,22 @@
 <body ng-controller="MainController" >
     <div class="container">
         <h1>Cofenator has <span class="label label-info">{{coffee.length}}</span> items of coffee</h1>
-        <div class="container parallax-window" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/images/back-coffee.jpg" data-natural-width="2560" data-natural-height="1700">
+        <div class="container">
             <div class="col-sm-8 col-md-9">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
-                                </span>SECTION-1</a>
+                                </span>Flavor Additives</a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                BODY SECTION-1
+                                <h4>What flavors do you prefer to add in coffee?</h4>
+                                <div ng-repeat="additive in additives">
+                                    <flavor-additives additive="additive" choosen="chooseAdditive(additive)"></flavor-additives>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,7 +128,9 @@
                             </h4>
                         </div>
                         <div class="panel-body">
-                            BODY RESULT SECTION
+                            <div class="section-1">
+                                <p ng-show="choosenAdditives.length > 0">Flavor Additives: {{choosenAdditives}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,67 +139,61 @@
         <div class="container-fluid section-second">
             <div class="col-xs-6">
                 <div class="masonry" data-columns>
-                    <div ng-repeat="item in coffee">
-                        <item-info info="item"></item-info>
+                    <!--<div ng-repeat="item in coffee">-->
+                    <div ng-repeat="item in filteredCoffee(coffee)">
+                        <item-info info="item" on-click="zoomItem(item)"></item-info>
                     </div>
                 </div>
             </div>
             <div class="col-xs-6" ng-show="currentZoomItem">
-                <div>
-                    <div class="panel-group">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    {{currentZoomItem.name}}
-                                </h4>
-                            </div>
-                            <div class="panel-body">
-                                <div class="thumbnail">
-                                    <img ng-src="{{currentZoomItem.imageUrl}}" width="100%" alt="{{currentZoomItem.name}}">
-                                    <img ng-src="{{currentZoomItem.imageMilling}}" class="img-circle milling" alt="{{currentZoomItem.type}}">
-                                    <div class="taste">
-                                        <p>
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.sourness}}%;">
-                                                    <span class="taste-value">Sourness</span>
-                                                </div>
-                                            </div>
-                                        </p>
-                                        <p>
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.bitterness}}%;">
-                                                    <span class="taste-value">Bitterness</span>
-                                                </div>
-                                            </div>
-                                        </p>
-                                        <p>
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.fortress}}%;">
-                                                    <span class="taste-value">Fortress</span>
-                                                </div>
-                                            </div>
-                                        </p>
-                                        <p>
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.saturation}}%;">
-                                                    <span class="taste-value">Saturation</span>
-                                                </div>
-                                            </div>
-                                        </p>
+                <div class="panel-group">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                {{currentZoomItem.name}}
+                            </h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="thumbnail">
+                                <img ng-src="{{currentZoomItem.imageUrl}}" width="100%" alt="{{currentZoomItem.name}}">
+                                <img ng-src="{{currentZoomItem.imageMilling}}" class="img-circle milling" alt="{{currentZoomItem.type}}">
+                                <div class="taste">
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.sourness}}%;">
+                                            <span class="taste-value">Sourness</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.bitterness}}%;">
+                                            <span class="taste-value">Bitterness</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.fortress}}%;">
+                                            <span class="taste-value">Fortress</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.saturation}}%;">
+                                            <span class="taste-value">Saturation</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <p>
-                                    {{currentZoomItem.description}}
-                                </p>
-                                <p>
-                                    Composition (Arabica/Robusta): {{currentZoomItem.composition}}
-                                </p>
                             </div>
-                            <div class="panel-footer">
-                                <div class="btn-group">
-                                    <button type="button" ng-click="hideZoomItem()" class="btn btn-default">Close</button>
-                                    <button type="button" href="{{currentZoomItem.url}}" class="btn btn-success">Go to the shop!</button>
-                                </div>
+                            <p>
+                                {{currentZoomItem.description}}
+                            </p>
+                            <p>
+                                Composition (Arabica/Robusta): {{currentZoomItem.composition}}
+                            </p>
+                            <p>
+                                Combined: <span ng-repeat="add in currentZoomItem.combined">{{add.taste + " "}}</span>
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="btn-group">
+                                <button type="button" ng-click="hideZoomItem()" class="btn btn-default">Close</button>
+                                <button type="button" href="{{currentZoomItem.url}}" class="btn btn-success">Go to the shop!</button>
                             </div>
                         </div>
                     </div>
@@ -211,12 +209,10 @@
     <script src="/js/controllers/MainController.js"></script>
     <!-- Directives -->
     <script src="/js/directives/itemInfo.js"></script>
+    <script src="/js/directives/flavorAdditives.js"></script>
     <!-- Main -->
     <script src="/js/main.js"></script>
 </body>
-
-
-
 
 <style>
     .section-second{

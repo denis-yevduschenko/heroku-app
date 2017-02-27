@@ -12,7 +12,12 @@
 		"bitterness": 2,
 		"fortress": 2,
 		"saturation": 5,
-		"url": "http://grusha.ua/catalog/zernovoy_kofe/nero_marrone_classic_zernovoy/"
+		"url": "http://grusha.ua/catalog/zernovoy_kofe/nero_marrone_classic_zernovoy/",
+		"combined":[
+			{"id": 1, "taste":"Pure"},
+			{"id": 2, "taste":"Milk"},
+			{"id": 3, "taste":"Chocolate"}
+		]
     }, 
     {
 		"id": 1002, 
@@ -27,7 +32,12 @@
 		"bitterness": 4,
 		"fortress": 4,
 		"saturation": 5,
-		"url": "http://grusha.ua/catalog/molotyy_kofe/solo_caffe_molotyy/"
+		"url": "http://grusha.ua/catalog/molotyy_kofe/solo_caffe_molotyy/",
+		"combined": [
+			{"id": 1, "taste":"Milk"},
+			{"id": 2, "taste":"Chocolate"},
+			{"id": 3, "taste":"Alcohol"}
+		]
     },     
 	{
 		"id": 1003, 
@@ -42,7 +52,12 @@
 		"bitterness": 2,
 		"fortress": 2,
 		"saturation": 5,
-		"url": "http://grusha.ua/catalog/molotyy_kofe/eletto_organic_molotyy/"
+		"url": "http://grusha.ua/catalog/molotyy_kofe/eletto_organic_molotyy/",
+		"combined": [
+			{"id": 1, "taste":"Pure"},
+			{"id": 2, "taste":"Sugar"},
+			{"id": 3, "taste":"Chocolate"}
+		]
     }, 
 	{
         "id": 1004,
@@ -57,7 +72,12 @@
 		"bitterness": 2,
 		"fortress": 2,
 		"saturation": 5,
-		"url": "http://grusha.ua/catalog/zernovoy_kofe/via_lattea_arabica_blend_zernovoy/"
+		"url": "http://grusha.ua/catalog/zernovoy_kofe/via_lattea_arabica_blend_zernovoy/",
+		"combined": [
+			{"id": 1, "taste":"Sugar"},
+			{"id": 2, "taste":"Vanilla"},
+			{"id": 3, "taste":"Chocolate"}
+		]
     }, 
 	{
 		"id": 1005, 
@@ -72,7 +92,12 @@
 		"bitterness": 3,
 		"fortress": 2,
 		"saturation": 5,
-		"url": "http://grusha.ua/catalog/molotyy_kofe/giovani_molotyy/"
+		"url": "http://grusha.ua/catalog/molotyy_kofe/giovani_molotyy/",
+		"combined":[
+			{"id": 1, "taste":"Pure"},
+			{"id": 2, "taste":"Sugar"},
+			{"id": 3, "taste":"Alcohol"}
+		]
     }, 
 		{
 		"id": 1006, 
@@ -87,7 +112,12 @@
 		"bitterness": 3,
 		"fortress": 5,
 		"saturation": 5,
-		"url": "http://grusha.ua/catalog/zernovoy_kofe/videnskiy_smak_zernovoy/"
+		"url": "http://grusha.ua/catalog/zernovoy_kofe/videnskiy_smak_zernovoy/",
+		"combined":[
+			{"id": 1, "taste":"Sugar"},
+			{"id": 2, "taste":"Milk"},
+			{"id": 3, "taste":"Vanilla"}
+		]
     }, 
 		{
 		"id": 1007, 
@@ -102,7 +132,12 @@
 		"bitterness": 4,
 		"fortress": 4,
 		"saturation": 5,
-		"url": "https://grusha.ua/catalog/zernovoy_kofe/san_gusto_zernovoy/"
+		"url": "https://grusha.ua/catalog/zernovoy_kofe/san_gusto_zernovoy/",
+		"combined":[
+			{"id": 1, "taste":"Milk"},
+			{"id": 2, "taste":"Citrus"},
+			{"id": 3, "taste":"Vanilla"}
+		]
     }, 
 	{
 		"id": 1008, 
@@ -117,7 +152,12 @@
 		"bitterness": 3,
 		"fortress": 4,
 		"saturation": 4,
-		"url": "https://grusha.ua/catalog/molotyy_kofe/coupage_5_molotyy/"
+		"url": "https://grusha.ua/catalog/molotyy_kofe/coupage_5_molotyy/",
+		"combined": [
+			{"id": 1, "taste":"Sugar"},
+			{"id": 2, "taste":"Milk"},
+			{"id": 3, "taste":"Citrus"}
+		]
     }, 
 	{
 		"id": 1009, 
@@ -132,6 +172,11 @@
 		"bitterness": 3,
 		"fortress": 5,
 		"saturation": 4,
-		"url": "https://grusha.ua/catalog/molotyy_kofe/daniele_molotyy/"
+		"url": "https://grusha.ua/catalog/molotyy_kofe/daniele_molotyy/",
+		"combined":[
+			{"id": 1, "taste":"Milk"},
+			{"id": 2, "taste":"Chocolate"},
+			{"id": 3, "taste":"Alcohol"}
+		]
     }
 ]
