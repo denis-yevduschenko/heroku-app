@@ -3,7 +3,9 @@
     height: 10px;
     background: #00e3ff;
 }
-
+.logo{
+    margin-top: 6px;
+}
 .menu {
     width: 100%;
     background: #fff;
@@ -60,7 +62,6 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */ /* Rules below not implemented in browsers yet */
     -o-user-select: none;
-    https: / / grusha . ua /catalog/ molotyy_kofe /daniele_molotyy/
     user-select: none;
     cursor: pointer;
 }

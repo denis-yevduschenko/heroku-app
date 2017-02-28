@@ -6,11 +6,13 @@
     <script src="/js/libs/jquery-3.1.1.min.js"></script>
     <script src="/js/libs/angular.js"></script>
     <script src="/js/libs/bootstrap.min.js"></script>
-
     <link rel="stylesheet" href="/css/masonry.css">
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/libs/bootstrap.css">
+    <link rel="stylesheet" href="/css/libs/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/libs/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/css/static/header.css">
+    <link rel="stylesheet" href="/css/static/footer.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <!--menu-->
@@ -26,7 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="closepage" menuid="0" class="brand" href="#" followlink="true">Cofinator</a>
+                    <img class="logo" src="images/static/logo.png" alt="Coffeenator">
                 </div>
                 <div class="collapse navbar-collapse pull-right" id="main-menu">
                     <ul class="nav">
@@ -46,91 +48,152 @@
 <body ng-controller="MainController" >
     <div class="container">
         <h1>Cofenator has <span class="label label-info">{{coffee.length}}</span> items of coffee</h1>
-        <div class="container">
-            <div class="col-sm-8 col-md-9">
-                <div class="panel-group" id="accordion">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
-                                </span>Flavor Additives</a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                                <h4>What flavors do you prefer to add in coffee?</h4>
+        <h4>Which one is right for you?</h4>
+        <h4>Answer the questions below to discover your ideal coffee.</h4>
+        <div class="col-sm-8 col-md-9">
+            <div class="panel-group" id="accordion">
+                <!--additives-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-file">
+                            </span>Flavor Additives</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <h4>What flavors do you prefer to add in coffee?</h4>
+                            <div class="row">
                                 <div ng-repeat="additive in additives">
                                     <flavor-additives additive="additive" choosen="chooseAdditive(additive)"></flavor-additives>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
-                                </span>SECTION-2</a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                BODY SECTION-2
+                </div>
+                <!--type of coffee-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th-list">
+                            </span>Type of coffee</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h4>What type of coffee would you prefer to use?</h4>
+                            <div class="col-xs-12">
+                                <form name="typeOfCoffeeForm">
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="typeOfCoffee" value="Ground coffee"> Ground coffee</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="typeOfCoffee" value="Coffee beans"> Coffee beans</label>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-th-list">
-                                </span>SECTION-3</a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                BODY SECTION-3
+                </div>
+                <!--roast-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-th-list">
+                            </span>How strong?</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h4>How strong do you tend to like your coffee?</h4>
+                            <div class="col-xs-12">
+                                <form name="strong">
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="search.roasted" value="Light roast"> Mild taste and aroma</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="search.roasted" value="Medium roast"> Medium taste and aroma</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="search.roasted" value="Heavy roast"> Strong taste and aroma</label>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-th-list">
-                                </span>SECTION-4</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                BODY SECTION-4
+                </div>
+                <!--size-->
+                <!-- TODO:: doesn't work, fix -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-th-list">
+                            </span>How do you like your coffee served?</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h4>How do you like your coffee served?</h4>
+                            <div class="col-xs-12">
+                                <form name="served">
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="cupSize" value="short"> A Short shot</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="cupSize" value="medium"> A medium sized cup</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="cupSize" value="tall"> A tall cup full</label>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-th-list">
-                                    </span>SECTION-5</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                BODY SECTION-5
+                </div>
+                <!--price-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><span class="glyphicon glyphicon-th-list">
+                                </span>Price</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <h4>How much money do you ready to spend on coffee?</h4>
+                            <div class="col-xs-12">
+                                <form name="served">
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="search.price" value="1$"> $</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="search.price" value="2$"> $$</label>
+                                    </div>
+                                    <div class="row">
+                                        <label><input type="radio" ng-model="search.price" value="3$"> $$$</label>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="panel-group">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                Result
-                            </h4>
-                        </div>
-                        <div class="panel-body">
-                            <div class="section-1">
-                                <p ng-show="choosenAdditives.length > 0">Flavor Additives: {{choosenAdditives}}</p>
-                            </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+            <div class="panel-group">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            Result
+                        </h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="section-1">
+                            <p ng-show="choosenAdditives.length > 0">Flavor Additives: {{choosenAdditives}}</p>
+                            <p ng-show="typeOfCoffee">Type of coffee: {{typeOfCoffee}}</p>
+                            <p ng-show="search.roasted">Roast: {{search.roasted}}</p>
+                            <p ng-show="cupSize">Size: {{cupSize}}</p>
+                            <p ng-show="search.price">Money: {{search.price}}</p>
                         </div>
                     </div>
                 </div>
@@ -140,7 +203,7 @@
             <div class="col-xs-6">
                 <div class="masonry" data-columns>
                     <!--<div ng-repeat="item in coffee">-->
-                    <div ng-repeat="item in filteredCoffee(coffee)">
+                    <div ng-repeat="item in filteredCoffee(coffee) | filter:search">
                         <item-info info="item" on-click="zoomItem(item)"></item-info>
                     </div>
                 </div>
@@ -214,6 +277,23 @@
     <script src="/js/main.js"></script>
 </body>
 
+<div class="navbar-fixed-bottom row-fluid">
+    <div class="footer">
+        <div class="container coffee-footer">
+            <span>
+                <a href='https://vk.com/thankyousaf' target="_blank"><i class="fa fa-vk fa-3x fa-fw"></i></a>
+                <a href='https://www.facebook.com/denis.yevduschenko' target="_blank"><i class="fa fa-facebook fa-3x fa-fw"></i></a>
+                <a href='#' target="_blank"><i class="fa fa-twitter fa-3x fa-fw"></i></a>
+                <a href='#' target="_blank"><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+                <a href='skype:borntow1n?chat' target="_blank"><i class="fa fa-skype fa-3x fa-fw"></i></a>
+                <a href='mailto:d.yevduschenko@gmail.com' target="_blank"><i class="fa fa-envelope-o fa-3x fa-fw"></i></a>
+                <a href='https://github.com/denis-yevduschenko' target="_blank"><i class="fa fa-github fa-3x fa-fw"></i></a>
+                <a href='https://www.linkedin.com/in/d-yevduschenko' target="_blank"><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
+            </span>
+        </div>
+    </div>
+</div>
+
 <style>
     .section-second{
         margin-top: 30px;
@@ -262,5 +342,8 @@
     .progress-bar {
         text-align: left;
     }
+
+
+    /*footer*/
 
 </style>

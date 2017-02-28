@@ -1,6 +1,6 @@
 body {
     /* Location of the image */
-    background-image: url(/images/back-coffee.jpg);
+    background-image: url(/images/static/back-coffee.jpg);
 
     /* Background image is centered vertically and horizontally at all times */
     background-position: center center;
@@ -19,4 +19,6 @@ body {
     /* Set a background color that will be displayed
        while the background image is loading */
     background-color: #464646;
+
+    margin-bottom: 75px;
 }

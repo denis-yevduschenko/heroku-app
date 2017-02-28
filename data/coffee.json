@@ -17,7 +17,8 @@
 			{"id": 1, "taste":"Pure"},
 			{"id": 2, "taste":"Milk"},
 			{"id": 3, "taste":"Chocolate"}
-		]
+		],
+		"price": "3$"
     }, 
     {
 		"id": 1002, 
@@ -34,10 +35,11 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/molotyy_kofe/solo_caffe_molotyy/",
 		"combined": [
-			{"id": 1, "taste":"Milk"},
+			{"id": 1, "taste":"Alcohol"},
 			{"id": 2, "taste":"Chocolate"},
-			{"id": 3, "taste":"Alcohol"}
-		]
+			{"id": 3, "taste":"Milk"}
+		],
+		"price": "2$"
     },     
 	{
 		"id": 1003, 
@@ -54,10 +56,11 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/molotyy_kofe/eletto_organic_molotyy/",
 		"combined": [
-			{"id": 1, "taste":"Pure"},
+			{"id": 1, "taste":"Chocolate"},
 			{"id": 2, "taste":"Sugar"},
-			{"id": 3, "taste":"Chocolate"}
-		]
+			{"id": 3, "taste":"Pure"}
+		],
+		"price": "3$"
     }, 
 	{
         "id": 1004,
@@ -77,7 +80,8 @@
 			{"id": 1, "taste":"Sugar"},
 			{"id": 2, "taste":"Vanilla"},
 			{"id": 3, "taste":"Chocolate"}
-		]
+		],
+		"price": "3$"
     }, 
 	{
 		"id": 1005, 
@@ -97,7 +101,8 @@
 			{"id": 1, "taste":"Pure"},
 			{"id": 2, "taste":"Sugar"},
 			{"id": 3, "taste":"Alcohol"}
-		]
+		],
+		"price": "2$"
     }, 
 		{
 		"id": 1006, 
@@ -117,16 +122,17 @@
 			{"id": 1, "taste":"Sugar"},
 			{"id": 2, "taste":"Milk"},
 			{"id": 3, "taste":"Vanilla"}
-		]
-    }, 
+		],
+		"price": "1$"
+    },
 		{
-		"id": 1007, 
-		"name": "San Gusto", 
+		"id": 1007,
+		"name": "San Gusto",
 		"type": "Coffee beans",
 		"imageMilling": "images/type/beans.jpg",
         "composition": "50/50",
 		"roasted": "Medium roast",
-        "imageUrl": "images/sangusto-1.jpg", 
+        "imageUrl": "images/sangusto-1.jpg",
         "description": "Купаж ТМ «San Gusto» – это кофе с разных уголков мира. Наши мастера приложили массу усилий, чтобы Вы наслаждались интенсивными ароматами и полнотой богатого вкуса особенного кофе. Напитку присуща деликатная кислинка и палитра шоколадных оттенков в послевкусии.",
         "sourness": 1,
 		"bitterness": 4,
@@ -137,7 +143,8 @@
 			{"id": 1, "taste":"Milk"},
 			{"id": 2, "taste":"Citrus"},
 			{"id": 3, "taste":"Vanilla"}
-		]
+		],
+		"price": "2$"
     }, 
 	{
 		"id": 1008, 
@@ -157,7 +164,8 @@
 			{"id": 1, "taste":"Sugar"},
 			{"id": 2, "taste":"Milk"},
 			{"id": 3, "taste":"Citrus"}
-		]
+		],
+		"price": "2$"
     }, 
 	{
 		"id": 1009, 
@@ -177,6 +185,7 @@
 			{"id": 1, "taste":"Milk"},
 			{"id": 2, "taste":"Chocolate"},
 			{"id": 3, "taste":"Alcohol"}
-		]
+		],
+		"price": "1$"
     }
 ]
