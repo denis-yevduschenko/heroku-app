@@ -1,0 +1,5 @@
+# webstorm project files
+.idea
+
+# windows thumbnail cache
+Thumbs.db

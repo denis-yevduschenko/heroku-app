@@ -20,5 +20,69 @@ body {
        while the background image is loading */
     background-color: #464646;
 
-    margin-bottom: 75px;
+    margin-bottom: 90px;
+}
+.section-top{
+    text-align: center;
+}
+/*items*/
+.section-second{
+    margin-top: 30px;
+}
+
+.section-second .thumbnail{
+    border: none;
+}
+
+.section-second .thumbnail {
+    position:relative;
+    overflow:hidden;
+}
+
+.section-second .caption {
+    position:absolute;
+    top:0;
+    right:0;
+    background:rgba(66, 139, 202, 0.75);
+    width:100%;
+    height:100%;
+    padding:2%;
+    display: none;
+    text-align:center;
+    color:#fff !important;
+    z-index:2;
+}
+
+/*current item*/
+.current-block .current-block-image{
+    margin:.5em 10px .5em 0;
+    overflow:hidden; /* this is important */
+}
+
+.current-block img.milling{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    border: 2px solid black;
+    box-shadow: black;
+    padding: 3px;
+    width: 25%;
+}
+.current-block .taste{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width:35%;
+    text-align: left;
+}
+.current-block .taste .taste-value{
+    color: red;
+    margin-left: 5px;
+}
+.current-block .progress-bar {
+    text-align: left;
+}
+
+.current-block .coffee-image{
+    margin:-125px 0;
 }

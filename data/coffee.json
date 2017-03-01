@@ -14,11 +14,10 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/zernovoy_kofe/nero_marrone_classic_zernovoy/",
 		"combined":[
-			{"id": 1, "taste":"Pure"},
-			{"id": 2, "taste":"Milk"},
-			{"id": 3, "taste":"Chocolate"}
+			{"id": 1, "taste":"Pure"}
 		],
-		"price": "3$"
+		"price": "3$",
+		"cupSize": "medium"
     }, 
     {
 		"id": 1002, 
@@ -28,18 +27,17 @@
         "composition": "50/50",
 		"roasted": "Medium roast",
         "imageUrl": "images/casa-1.jpg", 
-        "description": "Зёрна, что были собраны с плантаций разных уголков мира, входят в состав кофейного букета ТМ «Caff? a Casa». Кофе, который дарит уют и тепло, насыщает воздух ароматом пряностей, пробуждает, а также согревает Вас и ваших близких каждый день. Всё это – ТМ «Caff? a Casa».",
+        "description": "Зёрна, что были собраны с плантаций разных уголков мира, входят в состав кофейного букета ТМ «Caffe a Casa». Кофе, который дарит уют и тепло, насыщает воздух ароматом пряностей, пробуждает, а также согревает Вас и ваших близких каждый день. Всё это – ТМ «Caffe a Casa».",
         "sourness": 2,
 		"bitterness": 4,
 		"fortress": 4,
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/molotyy_kofe/solo_caffe_molotyy/",
 		"combined": [
-			{"id": 1, "taste":"Alcohol"},
-			{"id": 2, "taste":"Chocolate"},
-			{"id": 3, "taste":"Milk"}
+			{"id": 1, "taste":"Alcohol"}
 		],
-		"price": "2$"
+		"price": "2$",
+		"cupSize": "short"
     },     
 	{
 		"id": 1003, 
@@ -56,11 +54,10 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/molotyy_kofe/eletto_organic_molotyy/",
 		"combined": [
-			{"id": 1, "taste":"Chocolate"},
-			{"id": 2, "taste":"Sugar"},
-			{"id": 3, "taste":"Pure"}
+			{"id": 1, "taste":"Chocolate"}
 		],
-		"price": "3$"
+		"price": "3$",
+		"cupSize": "medium"
     }, 
 	{
         "id": 1004,
@@ -77,11 +74,10 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/zernovoy_kofe/via_lattea_arabica_blend_zernovoy/",
 		"combined": [
-			{"id": 1, "taste":"Sugar"},
-			{"id": 2, "taste":"Vanilla"},
-			{"id": 3, "taste":"Chocolate"}
+			{"id": 1, "taste":"Sugar"}
 		],
-		"price": "3$"
+		"price": "3$",
+		"cupSize": "tall"
     }, 
 	{
 		"id": 1005, 
@@ -98,11 +94,10 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/molotyy_kofe/giovani_molotyy/",
 		"combined":[
-			{"id": 1, "taste":"Pure"},
-			{"id": 2, "taste":"Sugar"},
-			{"id": 3, "taste":"Alcohol"}
+			{"id": 1, "taste":"Pure"}
 		],
-		"price": "2$"
+		"price": "2$",
+		"cupSize": "medium"
     }, 
 		{
 		"id": 1006, 
@@ -119,11 +114,10 @@
 		"saturation": 5,
 		"url": "http://grusha.ua/catalog/zernovoy_kofe/videnskiy_smak_zernovoy/",
 		"combined":[
-			{"id": 1, "taste":"Sugar"},
-			{"id": 2, "taste":"Milk"},
-			{"id": 3, "taste":"Vanilla"}
+			{"id": 1, "taste":"Sugar"}
 		],
-		"price": "1$"
+		"price": "1$",
+		"cupSize": "short"
     },
 		{
 		"id": 1007,
@@ -140,11 +134,10 @@
 		"saturation": 5,
 		"url": "https://grusha.ua/catalog/zernovoy_kofe/san_gusto_zernovoy/",
 		"combined":[
-			{"id": 1, "taste":"Milk"},
-			{"id": 2, "taste":"Citrus"},
-			{"id": 3, "taste":"Vanilla"}
+			{"id": 1, "taste":"Milk"}
 		],
-		"price": "2$"
+		"price": "2$",
+		"cupSize": "medium"
     }, 
 	{
 		"id": 1008, 
@@ -161,11 +154,10 @@
 		"saturation": 4,
 		"url": "https://grusha.ua/catalog/molotyy_kofe/coupage_5_molotyy/",
 		"combined": [
-			{"id": 1, "taste":"Sugar"},
-			{"id": 2, "taste":"Milk"},
-			{"id": 3, "taste":"Citrus"}
+			{"id": 1, "taste":"Sugar"}
 		],
-		"price": "2$"
+		"price": "2$",
+		"cupSize": "tall"
     }, 
 	{
 		"id": 1009, 
@@ -175,17 +167,16 @@
         "composition": "100/0",
 		"roasted": "Medium roast",
         "imageUrl": "images/daniele-1.jpg", 
-        "description": "В бленде «Coupage №5» сочетается арабика с плантаций всего мира. Любите настоящий эспрессо? Тогда этот бленд создан для Вас. В аромате преобладают оттенки карамели, во вкусе своё проявление находит кислинка, оставляя насыщенное послевкусие чёрного шоколада.",
+        "description": "ТМ «Daniele» – кофе для тех, кто знает ценность времени, для тех, кто привык наслаждаться качественным кофе и потреблять лучшее. В купаже соединились отборные сорта арабики. Аромат удивляет оттенками свежего печенья, хлебными нотками и фруктовой кислинкой, а послевкусие горького чёрного шоколада дополняет эту композицию.",
         "sourness": 3,
 		"bitterness": 3,
 		"fortress": 5,
 		"saturation": 4,
 		"url": "https://grusha.ua/catalog/molotyy_kofe/daniele_molotyy/",
 		"combined":[
-			{"id": 1, "taste":"Milk"},
-			{"id": 2, "taste":"Chocolate"},
-			{"id": 3, "taste":"Alcohol"}
+			{"id": 1, "taste":"Milk"}
 		],
-		"price": "1$"
+		"price": "1$" ,
+		"cupSize": "short"
     }
 ]

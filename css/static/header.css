@@ -162,3 +162,8 @@
     color: #262626;
     text-decoration: none;
 }
+
+.nav .fa-refresh{
+    margin-top: 14px;
+    cursor: pointer;
+}
