@@ -3,16 +3,33 @@
 <html ng-app="CofenatorApp">
 <head>
     <title>Coffeenator App</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/png/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/png/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/png/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/png/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/png/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/png/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/png/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/png/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/png/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/png/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/png/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/png/favicon-16x16.png">
+    <link rel="manifest" href="/images/png/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/png/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <script src="/js/libs/jquery-3.1.1.min.js"></script>
     <script src="/js/libs/angular.js"></script>
     <script src="/js/libs/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/libs/bootstrap.css">
     <link rel="stylesheet" href="/css/libs/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/libs/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Marvel" rel="stylesheet">
     <link rel="stylesheet" href="/css/static/header.css">
     <link rel="stylesheet" href="/css/static/footer.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Marvel" rel="stylesheet">
 </head>
 <!--menu-->
 <div class="header_top"></div>
@@ -31,8 +48,7 @@
                 </div>
                 <div class="collapse navbar-collapse pull-right" id="main-menu">
                     <ul class="nav">
-                        <li class="fadeInDown animated d1 "><a href="#" class="active" id="home" menuid="0"
-                                                               followlink="true">Home</a></li>
+                        <li class="fadeInDown animated d1 "><a href="#" class="active" id="home" menuid="0" followlink="true">Home</a></li>
                         <li class="fadeInDown animated d2"><a ng-click="reloadRoute()" ng-mouseenter="addSpinner()" ng-mouseleave="removeSpinner()"><i class="fa fa-refresh fa-3x" aria-hidden="true"></i></a></li>
                         <li class="fadeInDown animated d2"><a href="#" menuid="1" followlink="true">About</a></li>
                         <li class="fadeInDown animated d2"><a href="#" menuid="1" followlink="true">Blog</a></li>
@@ -54,14 +70,15 @@
             <h4>Answer the questions below to discover your ideal coffee.</h4>
             <hr>
         </div>
+    </div>
+    <div class="container">
         <div class="col-sm-8 col-md-9 section-first">
             <div class="panel-group" id="accordion">
                 <!--additives-->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
+                <div class="panel panel-primary question">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="fa fa-tag" aria-hidden="true"></i>
-                            Flavor Additives</a>
+                            <i class="fa fa-tag" aria-hidden="true"></i>Flavor Additives
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
@@ -76,11 +93,10 @@
                     </div>
                 </div>
                 <!--type of coffee-->
-                <div class="panel panel-primary section-first-type">
-                    <div class="panel-heading">
+                <div class="panel panel-primary question">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><i class="fa fa-list-alt" aria-hidden="true"></i>
-                            Type of coffee</a>
+                            <i class="fa fa-list-alt" aria-hidden="true"></i>Type of coffee
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
@@ -101,125 +117,15 @@
                                         </li>
                                     </ul>
                                 </form>
-                                <style>
-                                    /*First section(questions)*/
-                                    .panel-primary > .panel-heading {
-                                        background-image: -webkit-linear-gradient(top, #00e3ff 0%, #2e6da4 100%);
-                                        background-image: -o-linear-gradient(top, #00e3ff 0%, #2e6da4 100%);
-                                        background-image: -webkit-gradient(linear, left top, left bottom, from(#00e3ff), to(#2e6da4));
-                                        background-image: linear-gradient(to bottom, #00e3ff 0%, #2e6da4 100%);
-                                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00e3ff', endColorstr='#ff2e6da4', GradientType=0);
-                                        background-repeat: repeat-x;
-                                    }
-                                    .panel-primary > .panel-heading {
-                                        color: #fff;
-                                        background-color: #00e3ff;
-                                        border-color: #00e3ff;
-                                    }
-
-                                    .section-first h4{
-                                        font-size: 1.5em;
-                                        font-family: 'Baloo', cursive;
-
-                                    }
-                                    .section-top h1{
-                                        font-family: 'Baloo', cursive;
-                                    }
-
-                                    /*radio buttons*/
-                                    .section-first input[type=radio]{
-                                        position: absolute;
-                                        visibility: hidden;
-                                    }
-
-                                    .section-first .container ul{
-                                        list-style: none;
-                                        height: 100%;
-                                        width: 100%;
-                                        margin: 0;
-                                        padding: 0;
-                                    }
-
-                                    .section-first ul li{
-                                        color: #AAAAAA;
-                                        display: block;
-                                        position: relative;
-                                        width: 100%;
-                                    }
-
-                                    .section-first ul li label{
-                                        font-family: 'Marvel', sans-serif;
-                                        display: block;
-                                        position: relative;
-                                        font-weight: bold;
-                                        font-size: 1.5em;
-                                        padding: 10px 10px 10px 50px;
-                                        margin: 5px auto;
-                                        z-index: 9;
-                                        cursor: pointer;
-                                        -webkit-transition: all 0.25s linear;
-                                    }
-
-                                    .section-first ul li:hover label{
-                                        color: #00e3ff;
-
-                                    }
-
-                                    .section-first ul li .check{
-                                        display: block;
-                                        position: absolute;
-                                        border: 5px solid #00e3ff;
-                                        border-radius: 100%;
-                                        height: 25px;
-                                        width: 25px;
-                                        top: 10px;
-                                        left: 15px;
-                                        z-index: 5;
-                                        transition: border .25s linear;
-                                        -webkit-transition: border .25s linear;
-                                    }
-
-                                    .section-first ul li:hover .check {
-                                        border: 4px solid #00e3ff;
-                                    }
-
-                                    .section-first ul li .check::before {
-                                        display: block;
-                                        position: absolute;
-                                        content: '';
-                                        border-radius: 100%;
-                                        height: 15px;
-                                        width: 15px;
-                                        top: 1px;
-                                        left: 1px;
-                                        margin: auto;
-                                        transition: background 0.25s linear;
-                                        -webkit-transition: background 0.25s linear;
-                                    }
-
-                                    .section-first input[type=radio]:checked ~ .check {
-                                        border: 4px solid #0075f0;
-
-                                    }
-
-                                    .section-first input[type=radio]:checked ~ .check::before{
-                                        background: #0075f0;
-                                    }
-
-                                    .section-first input[type=radio]:checked ~ label{
-                                        color: #0075f0;
-                                    }
-                                </style>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--roast-->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
+                <div class="panel panel-primary question">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><i class="fa fa-free-code-camp" aria-hidden="true"></i>
-                            How strong?</a>
+                            <i class="fa fa-free-code-camp" aria-hidden="true"></i>How strong?
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
@@ -250,11 +156,10 @@
                     </div>
                 </div>
                 <!--size-->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
+                <div class="panel panel-primary question">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><i class="fa fa-coffee" aria-hidden="true"></i>
-                            How do you like your coffee served?</a>
+                            <i class="fa fa-coffee" aria-hidden="true"></i>How do you like your coffee served?
                         </h4>
                     </div>
                     <div id="collapseFour" class="panel-collapse collapse">
@@ -271,12 +176,16 @@
                                         <li>
                                             <input type="radio" id="cup-2" ng-model="search.cupSize" value="medium">
                                             <label for="cup-2">A medium sized cup</label>
-                                            <div class="check"><div class="inside"></div></div>
+                                            <div class="check">
+                                                <div class="inside"></div>
+                                            </div>
                                         </li>
                                         <li>
                                             <input type="radio" id="cup-3" ng-model="search.cupSize" value="tall">
                                             <label for="cup-3">A tall cup full</label>
-                                            <div class="check"><div class="inside"></div></div>
+                                            <div class="check">
+                                                <div class="inside"></div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </form>
@@ -285,11 +194,10 @@
                     </div>
                 </div>
                 <!--price-->
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
+                <div class="panel panel-primary question">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"><i class="fa fa-credit-card" aria-hidden="true"></i>
-                            Price</a>
+                            <i class="fa fa-credit-card" aria-hidden="true"></i>Price
                         </h4>
                     </div>
                     <div id="collapseFive" class="panel-collapse collapse">
@@ -306,12 +214,16 @@
                                         <li>
                                             <input type="radio" id="price-2" ng-model="search.price" value="2$">
                                             <label for="price-2">$$</label>
-                                            <div class="check"><div class="inside"></div></div>
+                                            <div class="check">
+                                                <div class="inside"></div>
+                                            </div>
                                         </li>
                                         <li>
                                             <input type="radio" id="price-3" ng-model="search.price" value="3$">
                                             <label for="price-3">$$$</label>
-                                            <div class="check"><div class="inside"></div></div>
+                                            <div class="check">
+                                                <div class="inside"></div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </form>
@@ -323,7 +235,7 @@
         </div>
         <div class="col-sm-4 col-md-3 section-first">
             <div class="panel-group">
-                <div class="panel panel-success">
+                <div class="panel panel-success" ng-mouseover="showCount()" ng-mouseleave="hideCount()">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             Result
@@ -332,33 +244,72 @@
                     <div class="panel-body">
                         <div class="section-result">
                             <div class="result-row" ng-show="choosenAdditives.length > 0" ng-hide="choosenAdditives.length <= 0">
-                                <p>Flavor Additives: {{choosenAdditives}}</p>
+                                <div class="col-xs-3">
+                                    <div class="row">
+                                        <i class="fa fa-tag" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>{{choosenAdditives}}</p>
+                                </div>
                             </div>
                             <div class="result-row" ng-show="search.type">
-                                <p>Type of coffee: {{search.type}}</p>
+                                <div class="col-xs-3">
+                                    <div class="row">
+                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>{{search.type}}</p>
+                                </div>
                             </div>
-                            <div class="result-row" ng-show="search.type">
-                                <p>Roast: {{search.roasted}}</p>
+                            <div class="result-row" ng-show="search.roasted">
+                                <div class="col-xs-3">
+                                    <div class="row">
+                                        <i class="fa fa-free-code-camp" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>{{search.roasted}}</p>
+                                </div>
                             </div>
                             <div class="result-row" ng-show="search.cupSize">
-                                <p>Size: {{search.cupSize}}</p>
+                                <div class="col-xs-3">
+                                    <div class="row">
+                                        <i class="fa fa-coffee" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-9">
+                                    <p>{{search.cupSize}}</p>
+                                </div>
                             </div>
                             <div class="result-row" ng-show="search.price">
-                                <p>Money: {{search.price}}</p>
+                               <div class="col-xs-3">
+                                   <div class="row">
+                                       <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                   </div>
+                               </div>
+                                <div class="col-xs-9">
+                                    <p>{{search.price}}</p>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="panel-footer result-footer">
+                        <p class="count">Current items: {{filteredList.length}}</p>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="container-fluid section-second">
             <div class="col-xs-6">
                 <!--<div ng-repeat="item in coffee">-->
-                <div class="col-xs-12 col-sm-6" ng-repeat="item in filteredCoffee(coffee) | filter:search">
+                <div class="col-xs-12 col-sm-6" ng-repeat="item in filteredList = (filteredCoffee(coffee) | filter:search)">
                     <item-info info="item" on-click="zoomItem(item)"></item-info>
                 </div>
             </div>
-            <div class="col-xs-6" ng-show="currentZoomItem">
+            <div class="col-xs-6" id="currentItem" ng-show="currentZoomItem">
                 <div class="panel-group current-block">
                     <div class="panel panel-info">
                         <div class="panel-heading">

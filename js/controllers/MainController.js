@@ -39,10 +39,18 @@ CofenatorApp.controller('MainController', ['$scope', '$http', function($scope, $
             $scope.filterBy.push(additive.combined);
         }
     };
-    /*TODO:: reduce counts of additives to 1 in coffee.json*/
+
     $scope.filteredCoffee = function () {
         return $scope.coffee.filter(function (item) {
             return $scope.filterBy.indexOf(item.combined[0].taste) !== -1;
         });
+    };
+
+    $scope.showCount = function () {
+        $('.section-first').find('.result-footer').show("medium");
+    };
+
+    $scope.hideCount = function () {
+        $('.section-first').find('.result-footer').hide("medium");
     };
 }]);

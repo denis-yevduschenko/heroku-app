@@ -178,5 +178,65 @@
 		],
 		"price": "1$" ,
 		"cupSize": "short"
-    }
+    },
+	{
+		"id": 1010,
+		"name": "Segreto",
+		"type": "Coffee beans",
+		"imageMilling": "images/type/beans.jpg",
+		"composition": "100/0",
+		"roasted": "Heavy roast",
+		"imageUrl": "images/segreto-1.jpg",
+		"description": "Лучшие зёрна ароматной арабики с плантаций Африки, Азии и Латинской Америки, тщательно отобраны и удачно соединены в бленде ТМ «Segreto». Безусловно, кофе с действительно ярким характером. Наполненный горечью какао вкус подчёркивается благородной кислинкой и ощутимым длительным послевкусием чёрного шоколада.",
+		"sourness": 3,
+		"bitterness": 3,
+		"fortress": 4,
+		"saturation": 5,
+		"url": "https://grusha.ua/catalog/zernovoy_kofe/segreto_zernovoy/",
+		"combined": [
+			{"id": 1, "taste":"Vanilla"}
+		],
+		"price": "2$",
+		"cupSize": "medium"
+	},
+	{
+		"id": 1011,
+		"name": "Eletto Gourmet",
+		"type": "Ground coffee",
+		"imageMilling": "images/type/milling.jpg",
+		"composition": "90/10",
+		"roasted": "Medium roast",
+		"imageUrl": "images/eletto-2.jpg",
+		"description": "Яркая горчинка со всей многогранностью кислинки сочетаются в кофе ТМ «Eletto». Сложно не почувствовать палитру цветочных ароматов, богатство карамельного вкуса и высокую плотность готового напитка. Данный купаж станет универсальным, так как подойдёт для любого способа приготовления – от эспрессо-машины до френч-пресса.",
+		"sourness": 4,
+		"bitterness": 3,
+		"fortress": 3,
+		"saturation": 5,
+		"url": "https://grusha.ua/catalog/molotyy_kofe/eletto_gourmet_molotyy/",
+		"combined": [
+			{"id": 1, "taste":"Pure"}
+		],
+		"price": "3$",
+		"cupSize": "short"
+	},
+	{
+		"id": 1012,
+		"name": "Cortado",
+		"type": "Coffee beans",
+		"imageMilling": "images/type/beans.jpg",
+		"composition": "50/50",
+		"roasted": "Light roast",
+		"imageUrl": "images/cortado-1.jpg",
+		"description": "Отборные сорта арабики и робусты соединились для Вас в бленде ТМ «Cortado». Ведь выращивали их истинные мастера трёх континентов – Африки, Азии, Латинской Америки. Кофе насыщен интенсивным ароматом, максимальной крепостью, которая сочетается с деликатной кислинкой и проявлением горького шоколада в послевкусии.",
+		"sourness": 2,
+		"bitterness": 3,
+		"fortress": 5,
+		"saturation": 5,
+		"url": "https://grusha.ua/catalog/zernovoy_kofe/cortado_zernovoy/",
+		"combined": [
+			{"id": 1, "taste":"Sugar"}
+		],
+		"price": "1$",
+		"cupSize": "medium"
+	}
 ]
