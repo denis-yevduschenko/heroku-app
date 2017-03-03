@@ -7,10 +7,11 @@ CofenatorApp.directive('itemInfo', function() {
         },
         templateUrl: 'js/directives/itemInfo.html',
         link: function(scope, element, attr) {
+            var item = $('item-info');
 
-            $("item-info").find("[rel='tooltip']").tooltip();
+            item.find("[rel='tooltip']").tooltip();
 
-            $('item-info').find('.thumbnail').hover(
+            item.find('.thumbnail').hover(
                 function () {
                     $(this).find('.caption').fadeIn(250); //.fadeIn(250)slideDown
                 },
@@ -19,7 +20,7 @@ CofenatorApp.directive('itemInfo', function() {
                 }
             );
 
-            $(".caption").on("click","a", function (event) {
+            $('.caption').on('click','a', function (event) {
                 //отменяем стандартную обработку нажатия по ссылке
                 event.preventDefault();
 
