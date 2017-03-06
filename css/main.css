@@ -102,6 +102,37 @@ body {
 .section-first .question h4{
     cursor: pointer;
 }
+/*checkbox*/
+.question input[type="checkbox"] {
+    visibility: hidden;
+}
+.question label input[type="checkbox"] ~ i.fa.fa-square-o{
+    color: #00e3ff;
+    display: inline;
+}
+.question label span{
+    color: #AAAAAA;
+    display: inline;
+}
+.question label input[type="checkbox"] ~ i.fa.fa-check-square-o{
+    display: none;
+}
+.question label input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+    display: none;
+}
+.question label input[type="checkbox"]:checked ~ i.fa.fa-check-square-o, .question label input[type="checkbox"]:checked ~ span{
+    color: #2e3373;
+    display: inline;
+}
+.question label:hover input[type="checkbox"] ~ i.fa, .question label:hover span {
+    color: #00e3ff;
+}
+.question label span {
+    font-family: 'Marvel', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    -webkit-transition: all 0.25s linear;
+}
 
 /*radio buttons*/
 .section-first input[type=radio]{

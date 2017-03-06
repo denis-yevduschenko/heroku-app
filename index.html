@@ -235,7 +235,7 @@
         </div>
         <div class="col-sm-4 col-md-3 section-first">
             <div class="panel-group">
-                <div class="panel panel-success" ng-mouseover="showCount()" ng-mouseleave="hideCount()">
+                <div class="panel panel-success" ng-show="choosenAdditives.length || search.type || search.roasted || search.cupSize || search.price" ng-mouseover="showCount()" ng-mouseleave="hideCount()">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             Result
@@ -243,7 +243,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="section-result">
-                            <div class="result-row" ng-show="choosenAdditives.length > 0" ng-hide="choosenAdditives.length <= 0">
+                            <div class="result-row" ng-show="choosenAdditives.length">
                                 <div class="col-xs-3">
                                     <div class="row">
                                         <i class="fa fa-tag" aria-hidden="true"></i>
@@ -395,7 +395,7 @@
                 <a href='https://github.com/denis-yevduschenko' target="_blank"><i class="fa fa-github fa-3x fa-fw"></i></a>
                 <a href='https://www.linkedin.com/in/d-yevduschenko' target="_blank"><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
             </span>
-            <p>Website developed and designed by Denis Yevdushchenko.</p>
+            <p>Website developed and designed by Denys Yevdushchenko.</p>
         </div>
     </div>
 </div>
