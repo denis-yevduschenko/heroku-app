@@ -22637,16 +22637,16 @@ function nullFormRenameControl(control, name) {
  *
  * @property {boolean} $pristine True if user has not interacted with the form yet.
  * @property {boolean} $dirty True if user has already interacted with the form.
- * @property {boolean} $valid True if all of the containing forms and controls are valid.
+ * @property {boolean} $valid True if all of the containing backend and controls are valid.
  * @property {boolean} $invalid True if at least one containing control or form is invalid.
  * @property {boolean} $pending True if at least one containing control or form is pending.
  * @property {boolean} $submitted True if user has submitted the form even if its invalid.
  *
  * @property {Object} $error Is an object hash, containing references to controls or
- *  forms with failing validators, where:
+ *  backend with failing validators, where:
  *
  *  - keys are validation tokens (error names),
- *  - values are arrays of controls or forms that have a failing validator for given error name.
+ *  - values are arrays of controls or backend that have a failing validator for given error name.
  *
  *  Built-in validation tokens:
  *
@@ -22666,7 +22666,7 @@ function nullFormRenameControl(control, name) {
  *  - `month`
  *
  * @description
- * `FormController` keeps track of all its controls and nested forms as well as the state of them,
+ * `FormController` keeps track of all its controls and nested backend as well as the state of them,
  * such as being valid/invalid or dirty/pristine.
  *
  * Each {@link ng.directive:form form} directive creates an instance
@@ -22821,7 +22821,7 @@ FormController.prototype = {
    * Sets the form to a dirty state.
    *
    * This method can be called to add the 'ng-dirty' class and set the form to a dirty
-   * state (ng-dirty class). This method will also propagate to parent forms.
+   * state (ng-dirty class). This method will also propagate to parent backend.
    */
   $setDirty: function() {
     this.$$animate.removeClass(this.$$element, PRISTINE_CLASS);
@@ -22897,7 +22897,7 @@ FormController.prototype = {
  * @description
  * Sets the validity of a form control.
  *
- * This method will also propagate to parent forms.
+ * This method will also propagate to parent backend.
  */
 addSetValidityMethod({
   clazz: FormController,
@@ -22931,7 +22931,7 @@ addSetValidityMethod({
  *
  * @description
  * Nestable alias of {@link ng.directive:form `form`} directive. HTML
- * does not allow nesting of form elements. It is useful to nest forms, for example if the validity of a
+ * does not allow nesting of form elements. It is useful to nest backend, for example if the validity of a
  * sub-group of controls needs to be determined.
  *
  * Note: the purpose of `ngForm` is to group controls,
@@ -23159,7 +23159,7 @@ var formDirectiveFactory = function(isNgForm) {
 
     function getSetter(expression) {
       if (expression === '') {
-        //create an assignable expression, so forms with an empty name can be renamed later
+        //create an assignable expression, so backend with an empty name can be renamed later
         return $parse('this[""]').assign;
       }
       return $parse(expression).assign || noop;
@@ -23212,7 +23212,7 @@ function addSetValidityMethod(context) {
     }
 
     // re-read the state as the set/unset methods could have
-    // combined state in this.$error[validationError] (used for forms),
+    // combined state in this.$error[validationError] (used for backend),
     // where setting/unsetting only increments/decrements the value,
     // and does not replace it.
     var combinedState;
@@ -28911,7 +28911,7 @@ var ngModelDirective = ['$rootScope', function($rootScope) {
 
           modelCtrl.$$initGetterSetters();
 
-          // notify others, especially parent forms
+          // notify others, especially parent backend
           formCtrl.$addControl(modelCtrl);
 
           attr.$observe('name', function(newValue) {

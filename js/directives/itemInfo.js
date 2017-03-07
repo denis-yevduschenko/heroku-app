@@ -1,4 +1,4 @@
-CofenatorApp.directive('itemInfo', function() {
+CoffeenatorApp.directive('itemInfo', function() {
     return {
         restrict: 'E',
         scope: {

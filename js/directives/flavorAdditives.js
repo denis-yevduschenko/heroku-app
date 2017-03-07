@@ -1,4 +1,4 @@
-CofenatorApp.directive('flavorAdditives', function() {
+CoffeenatorApp.directive('flavorAdditives', function() {
     return {
         restrict: 'E',
         scope: {

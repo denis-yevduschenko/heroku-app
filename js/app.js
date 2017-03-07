@@ -1,1 +1,1 @@
-var CofenatorApp = angular.module("CofenatorApp", []);
+var CoffeenatorApp = angular.module("CoffeenatorApp", []);

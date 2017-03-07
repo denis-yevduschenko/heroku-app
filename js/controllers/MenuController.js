@@ -1,4 +1,10 @@
-CofenatorApp.controller('MenuController', ['$scope', '$window', function($scope, $window) {
+CoffeenatorApp.controller('MenuController', ['$scope', '$window', function($scope, $window) {
+    $scope.IsHidden = true;
+
+    $scope.ShowHide = function () {
+        //If DIV is hidden it will be visible and vice versa.
+        $scope.IsHidden = $scope.IsHidden ? false : true;
+    };
 
     $scope.reloadRoute = function() {
         $window.location.reload();
