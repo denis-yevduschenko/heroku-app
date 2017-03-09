@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	//If there is no error, send the email
 	if(!isset($hasError)) {
-		$body = "Name: $name \nEmail: $email \nWebsite: $weburl \Subject: $subject \n\nComments:\n $comments";
+		$body = "Name: $name \nEmail: $email \nWebsite: $weburl \nSubject: $subject \n\nComments:\n $comments";
 		$headers = 'From: '.$nameTo.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
         mail($emailTo, $subject, $body, $headers);
     }

@@ -1,4 +1,4 @@
-CoffeenatorApp.controller('MainController', ['$scope', '$http', function($scope, $http) {
+CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', function($scope, $http, $location) {
     $scope.currentZoomItem = '';
     $scope.choosenAdditives = '';
     $scope.filterBy = [];
