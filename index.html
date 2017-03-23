@@ -21,6 +21,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/png/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
     <script src="/js/libs/jquery-3.1.1.min.js"></script>
     <script src="/js/libs/angular.js"></script>
     <script src="/js/libs/angular-route.min.js"></script>
@@ -33,158 +34,9 @@
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Baloo|Marvel" rel="stylesheet">
 </head>
-<!--menu-->
-<div class="header_top"></div>
-<div class="ctrl" ng-controller="MenuController">
-    <div class="menu">
-        <header class="container">
-            <div class="navbar navbar-inner">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <img class="logo" src="images/static/logo.png" alt="Coffeenator">
-                    </div>
-                    <div class="collapse navbar-collapse pull-right" id="main-menu">
-                        <ul class="nav">
-                            <li class="fadeInDown animated d1 "><a href="/" class="active" id="home" menuid="0" followlink="true">Home</a></li>
-                            <li class="fadeInDown animated d2"><a ng-click="reloadRoute()" ng-mouseenter="addSpinner()" ng-mouseleave="removeSpinner()"><i class="fa fa-refresh fa-3x" aria-hidden="true"></i></a></li>
-                            <li class="fadeInDown animated d2"><a href="/about" menuid="1" followlink="true">About</a></li>
-                            <li class="fadeInDown animated d2"><a href="#" menuid="1" followlink="true">Blog</a></li>
-                            <li class="fadeInDown animated d2"><a href="#" menuid="1" followlink="true" ng-click="ShowHide()">Contact Us</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-        </header>
-    </div>
-    <!-- Contact Us-->
-    <div class="container contact-us" ng-controller="ContactController" ng-hide="IsHidden">
-        <div class="row">
-            <div class="col-xs-12 col-md-offset-6 col-md-6 contact-us-form">
-                <form novalidate name="contactForm" class="form-container">
-                    <div class="col-xs-12 form-group contact-us-inner">
-                        <div class="hidden-xs hidden-sm col-md-3 text-wrap">
-                            <label class="control-label">Name</label>
-                        </div>
-                        <div class="col-xs-12 col-md-9">
-                            <input ng-model="form.name" name="name" type="text" class="span6" placeholder="Enter your name..." required />
-                        </div>
-                        <div class="col-xs-12 col-md-offset-3 col-md-9">
-                            <span ng-show="contactForm.name.$error.required" class="help-inline">Required</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 form-group">
-                        <div class="hidden-xs hidden-sm col-md-3 text-wrap">
-                            <label class="control-label">Email</label>
-                        </div>
-                        <div class="col-xs-12 col-md-9">
-                            <input ng-model="form.email" name="email" type="email" class="span6" placeholder="Enter your email..." required />
-                        </div>
-                        <div class="col-xs-12 col-md-offset-3 col-md-9">
-                            <span ng-show="contactForm.email.$error.required" class="help-inline">Required</span>
-                            <span ng-show="contactForm.email.$error.email" class="help-inline">Invalid</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 form-group">
-                        <div class="hidden-xs hidden-sm col-md-3 text-wrap">
-                            <label class="control-label">Website</label>
-                        </div>
-                        <div class="col-xs-12 col-md-9">
-                            <input ng-model="form.website" name="website" type="text" class="span6" placeholder="Enter your website..." />
-                        </div>
-                    </div>
 
-                    <div class="col-xs-12 form-group">
-                        <div class="hidden-xs hidden-sm col-md-3 text-wrap">
-                            <label class="control-label" for="subjectField">Subject</label>
-                        </div>
-                        <div class="col-sm-12 col-md-9">
-                            <select ng-model="form.subject" name="subject" id="subjectField" class="span6" required>
-                                <option>Error</option>
-                                <option>Enhancement</option>
-                                <option>Question</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="col-xs-12 col-md-offset-3 col-md-9">
-                            <span ng-show="contactForm.subject.$error.required" class="help-inline">Required</span>
-                        </div>
-                    </div>
+<top-menu></top-menu>
 
-                    <div class="col-xs-12 form-group">
-                        <div class="hidden-xs hidden-sm col-md-3 text-wrap">
-                            <label class="control-label" for="message">Your message</label>
-                        </div>
-                        <div class="col-xs-12 col-md-9">
-                            <textarea ng-model="form.message" name="message" class="input-xlarge span11" id="message" rows="5" placeholder="Enter your message..." required></textarea>
-                        </div>
-                        <div class="col-xs-12 col-md-offset-3 col-md-9">
-                            <span ng-show="contactForm.message.$error.required" class="help-inline">Required</span>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button ng-click="sendForm()" ng-disabled="contactForm.$invalid || submitButtonDisabled" class="btn btn-primary">Send message &raquo;</button>
-                        <button ng-click="resetForm()" class="btn btn-danger">Reset</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<style>
-    .contact-us{
-        margin-top: -15px;
-
-    }
-    .contact-us-form{
-        background: #d7e1eb;
-        padding: 5px 10px;
-    }
-    .contact-us-inner{
-        margin-top: 15px;
-    }
-    .help-inline {
-        display: block;
-        margin-top: 5px;
-        margin-bottom: 10px;
-        color: #737373;
-    }
-    .text-wrap{
-        text-align: right;
-    }
-    .control-label{
-        color: #2e3373;
-        padding-top: 5px;
-    }
-    .span6, .span11{
-        display: block;
-        width: 100%;
-        height: 34px;
-        padding: 6px 12px;
-        font-size: 14px;
-        line-height: 1.428571429;
-        color: #555;
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    }
-    .span11{
-        height: 100px;
-    }
-
-</style>
-<!--end-menu-->
 <body ng-controller="MainController" ng-cloak>
 
     <ng-view></ng-view>
@@ -199,24 +51,10 @@
     <!-- Directives -->
     <script src="/js/directives/itemInfo.js"></script>
     <script src="/js/directives/flavorAdditives.js"></script>
+    <script src="/js/directives/topMenu.js"></script>
+    <script src="/js/directives/footer.js"></script>
     <!-- Main -->
     <script src="/js/main.js"></script>
 </body>
 
-<div class="navbar-fixed-bottom row-fluid">
-    <div class="footer">
-        <div class="container coffee-footer">
-            <span>
-                <a href='https://vk.com/thankyousaf' target="_blank"><i class="fa fa-vk fa-3x fa-fw"></i></a>
-                <a href='https://www.facebook.com/denis.yevduschenko' target="_blank"><i class="fa fa-facebook fa-3x fa-fw"></i></a>
-                <a href='#' target="_blank"><i class="fa fa-twitter fa-3x fa-fw"></i></a>
-                <a href='https://www.youtube.com/channel/UCpKiDUe2GZjftBw_xXuybXA' target="_blank"><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
-                <a href='skype:borntow1n?chat' target="_blank"><i class="fa fa-skype fa-3x fa-fw"></i></a>
-                <a href='mailto:d.yevduschenko@gmail.com' target="_blank"><i class="fa fa-envelope-o fa-3x fa-fw"></i></a>
-                <a href='https://github.com/denis-yevduschenko' target="_blank"><i class="fa fa-github fa-3x fa-fw"></i></a>
-                <a href='https://www.linkedin.com/in/d-yevduschenko' target="_blank"><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
-            </span>
-            <p>Website developed and designed by Denys Yevdushchenko.</p>
-        </div>
-    </div>
-</div>
+<footer></footer>
