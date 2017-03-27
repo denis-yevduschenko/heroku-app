@@ -1,3 +1,3 @@
-CoffeenatorApp.controller('AboutController',['$scope','$http', '$location', function($scope, $http, $location) {
+CoffeenatorApp.controller('AboutController',['$scope', function($scope) {
 
 }]);

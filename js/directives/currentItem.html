@@ -1,0 +1,59 @@
+<div class="col-xs-6" id="currentItem">
+    <div class="panel-group current-block">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    {{item.name}}
+                </h4>
+            </div>
+            <div class="panel-body">
+                <div class="thumbnail">
+                    <div class="current-block-image">
+                        <img class="coffee-image" ng-src="{{item.imageUrl}}" width="100%" alt="{{item.name}}">
+                    </div>
+                    <img ng-src="{{item.imageMilling}}" class="img-circle milling" alt="{{item.type}}">
+                    <div class="taste">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * item.sourness}}%;">
+                                <span class="taste-value">Sourness</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * item.bitterness}}%;">
+                                <span class="taste-value">Bitterness</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * item.fortress}}%;">
+                                <span class="taste-value">Fortress</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * item.saturation}}%;">
+                                <span class="taste-value">Saturation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    {{item.description}}
+                </p>
+                <p>
+                    Composition (Arabica/Robusta): {{item.composition}}
+                </p>
+                <p>
+                    Combined: <span ng-repeat="add in item.combined">{{add.taste + " "}}</span>
+                </p>
+                <p>
+                    Price: {{item.price}}
+                </p>
+            </div>
+            <div class="panel-footer">
+                <div class="btn-group">
+                    <button type="button" ng-click="close()" class="btn btn-default">Close</button>
+                    <a type="button" href="{{item.url}}" class="btn btn-success">Go to the shop!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

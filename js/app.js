@@ -8,7 +8,11 @@ CoffeenatorApp.config(['$routeProvider', '$locationProvider', function($routePro
     $routeProvide
         .when('/about', {
             templateUrl: 'templates/about.html',
-            controller: 'AboutController'
+            controller: 'MainController'
+        })
+        .when('/contact', {
+            templateUrl: 'templates/contact.html',
+            controller: 'MainController'
         })
         .when('/', {
             templateUrl: 'templates/home.html',

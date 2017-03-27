@@ -245,64 +245,6 @@
                 <item-info info="item" on-click="zoomItem(item)"></item-info>
             </div>
         </div>
-        <div class="col-xs-6" id="currentItem" ng-show="currentZoomItem">
-            <div class="panel-group current-block">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            {{currentZoomItem.name}}
-                        </h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="thumbnail">
-                            <div class="current-block-image">
-                                <img class="coffee-image" ng-src="{{currentZoomItem.imageUrl}}" width="100%" alt="{{currentZoomItem.name}}">
-                            </div>
-                            <img ng-src="{{currentZoomItem.imageMilling}}" class="img-circle milling" alt="{{currentZoomItem.type}}">
-                            <div class="taste">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.sourness}}%;">
-                                        <span class="taste-value">Sourness</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.bitterness}}%;">
-                                        <span class="taste-value">Bitterness</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.fortress}}%;">
-                                        <span class="taste-value">Fortress</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped" style="width: {{20 * currentZoomItem.saturation}}%;">
-                                        <span class="taste-value">Saturation</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>
-                            {{currentZoomItem.description}}
-                        </p>
-                        <p>
-                            Composition (Arabica/Robusta): {{currentZoomItem.composition}}
-                        </p>
-                        <p>
-                            Combined: <span ng-repeat="add in currentZoomItem.combined">{{add.taste + " "}}</span>
-                        </p>
-                        <p>
-                            Price: {{currentZoomItem.price}}
-                        </p>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="btn-group">
-                            <button type="button" ng-click="hideZoomItem()" class="btn btn-default">Close</button>
-                            <a type="button" href="{{currentZoomItem.url}}" class="btn btn-success">Go to the shop!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <current-item item="currentZoomItem" close="hideZoomItem()" ng-show="currentZoomItem"></current-item>
     </div>
 </div>

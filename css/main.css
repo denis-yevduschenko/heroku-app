@@ -287,6 +287,54 @@ body {
     margin:-125px 0;
 }
 
+/*Contact Us*/
+.contact-us{
+    margin-top: -15px;
+
+}
+.contact-us-form{
+    padding: 5px 10px;
+}
+.contact-us-form h2, .contact-us-form h5{
+    text-align: center;
+}
+.contact-us-inner{
+    margin-top: 15px;
+}
+.help-inline {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+.text-wrap{
+    text-align: right;
+}
+.control-label{
+    color: #2e3373;
+    padding-top: 5px;
+}
+.span6, .span11{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.span11{
+    height: 100px;
+}
+
 @media (max-width: 767px) {
     .current-block .coffee-image{
         margin:-40px 0;
