@@ -1,4 +1,4 @@
-var CoffeenatorApp = angular.module("CoffeenatorApp", ['ngRoute']);
+var CoffeenatorApp = angular.module("CoffeenatorApp", ['ngRoute', 'MyHttp']);
 
 CoffeenatorApp.config(['$routeProvider', '$locationProvider', function($routeProvide, $locationProvider){
     $locationProvider.html5Mode({
@@ -8,11 +8,11 @@ CoffeenatorApp.config(['$routeProvider', '$locationProvider', function($routePro
     $routeProvide
         .when('/about', {
             templateUrl: 'templates/about.html',
-            controller: 'MainController'
+            controller: 'AboutController'
         })
         .when('/contact', {
             templateUrl: 'templates/contact.html',
-            controller: 'MainController'
+            controller: 'ContactController'
         })
         .when('/', {
             templateUrl: 'templates/home.html',
@@ -22,3 +22,4 @@ CoffeenatorApp.config(['$routeProvider', '$locationProvider', function($routePro
             redirectTo: '/'
         });
 }]);
+

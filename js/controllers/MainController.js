@@ -1,4 +1,4 @@
-CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', 'MyHttpData', function($scope, $http, $location, MyHttpData) {
     $scope.currentZoomItem = '';
     $scope.choosenAdditives = '';
     $scope.filterBy = [];
@@ -6,13 +6,22 @@ CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', fun
     $scope.roast = '';
     $scope.cupSize = '';
 
-    $http.get('/data/coffee.json').then(function(response){
-        $scope.coffee = response.data;
-    });
+    $scope.coffee = '';
+    $scope.additives = '';
+    getCoffee();
+    getAdditives();
 
-    $http.get('/data/additives.json').then(function(response){
-        $scope.additives = response.data;
-    });
+    function getCoffee() {
+        MyHttpData.getCoffee().then(function (coffee) {
+            $scope.coffee = coffee.data;
+        });
+    }
+
+    function getAdditives() {
+        MyHttpData.getAdditives().then(function (additives) {
+            $scope.additives = additives.data;
+        });
+    }
 
     $scope.zoomItem = function (item) {
         $scope.currentZoomItem = item;
