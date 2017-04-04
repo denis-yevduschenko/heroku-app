@@ -1,4 +1,4 @@
-CoffeenatorApp.controller("ContactController", ['$scope', function($scope) {
+CoffeenatorApp.controller("ContactController", ['$scope', '$http', function($scope, $http) {
     $scope.lastForm = {};
     $scope.submitButtonDisabled = false;
 
