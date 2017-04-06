@@ -3,7 +3,7 @@ CoffeenatorApp.controller('MenuController', ['$scope', '$window', function($scop
 
     $scope.ShowHide = function () {
         //If DIV is hidden it will be visible and vice versa.
-        $scope.IsHidden = $scope.IsHidden ? false : true;
+        $scope.IsHidden = !$scope.IsHidden;
     };
 
     $scope.reloadRoute = function() {
