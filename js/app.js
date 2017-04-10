@@ -1,25 +1,25 @@
 var CoffeenatorApp = angular.module("CoffeenatorApp", ['ngRoute', 'MyHttp']);
 
-CoffeenatorApp.config(['$routeProvider', '$locationProvider', function($routeProvide, $locationProvider){
+CoffeenatorApp.config(function($routeProvider, $locationProvider){
     $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
     });
-    $routeProvide
+    $routeProvider
+        .when('/', {
+            templateUrl: 'templates/home.html',
+            controller: 'MainController'
+        })
         .when('/about', {
-            templateUrl: 'templates/about.html',
-            controller: 'AboutController'
+            templateUrl: 'templates/about.html'
         })
         .when('/contact', {
             templateUrl: 'templates/contact.html',
             controller: 'ContactController'
         })
-        .when('/', {
-            templateUrl: 'templates/home.html',
-            controller: 'MainController'
-        })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/',
+            controller: 'MainController'
         });
-}]);
+});
 

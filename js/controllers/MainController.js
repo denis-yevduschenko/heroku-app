@@ -1,6 +1,6 @@
 CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', 'MyHttpData', function($scope, $http, $location, MyHttpData) {
     $scope.currentZoomItem = '';
-    $scope.choosenAdditives = '';
+    $scope.chosenAdditives = '';
     $scope.filterBy = [];
     $scope.typeOfCoffee = '';
     $scope.roast = '';
@@ -32,10 +32,10 @@ CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', 'My
     };
 
     $scope.chooseAdditive = function (additive) {
-        var index = $scope.choosenAdditives.indexOf(additive.combined);
+        var index = $scope.chosenAdditives.indexOf(additive.combined);
         if (index > 0){
             /*del string from result block*/
-            $scope.choosenAdditives = $scope.choosenAdditives.substring(0, index) + $scope.choosenAdditives.substring(index + additive.combined.length);
+            $scope.chosenAdditives = $scope.chosenAdditives.substring(0, index) + $scope.chosenAdditives.substring(index + additive.combined.length);
             /*del additive from filter array*/
             arrayIndex = $scope.filterBy.indexOf(additive.combined);
             if (arrayIndex > -1) {
@@ -43,7 +43,7 @@ CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', 'My
             }
         } else {
             /*add string to result block*/
-            $scope.choosenAdditives += " " + additive.combined;
+            $scope.chosenAdditives += " " + additive.combined;
             /*add additive to filter array*/
             $scope.filterBy.push(additive.combined);
         }
@@ -53,13 +53,5 @@ CoffeenatorApp.controller('MainController', ['$scope', '$http', '$location', 'My
         return $scope.coffee.filter(function (item) {
             return $scope.filterBy.indexOf(item.combined[0].taste) !== -1;
         });
-    };
-
-    $scope.showCount = function () {
-        $('.section-first').find('.result-footer').show("medium");
-    };
-
-    $scope.hideCount = function () {
-        $('.section-first').find('.result-footer').hide("medium");
     };
 }]);

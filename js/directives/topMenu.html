@@ -17,9 +17,9 @@
                     <div class="collapse navbar-collapse pull-right" id="main-menu">
                         <ul class="nav">
                             <li class="fadeInDown animated d1 "><a href="/" class="active" id="home" menuid="0" followlink="true">Home</a></li>
-                            <li class="fadeInDown animated d2"><a ng-click="reloadRoute()" ng-mouseenter="addSpinner()" ng-mouseleave="removeSpinner()"><i class="fa fa-refresh fa-3x" aria-hidden="true"></i></a></li>
+                            <li class="fadeInDown animated d2"><a ng-click="reloadRoute()" ng-mouseenter="hover = true" ng-mouseleave="hover = false"><i class="fa fa-refresh fa-3x"  ng-class="{'fa-spin': hover}" aria-hidden="true"></i></a></li>
                             <li class="fadeInDown animated d2"><a href="/about" menuid="1" followlink="true">About</a></li>
-                            <li class="fadeInDown animated d2"><a href="/contact" menuid="1" followlink="true">Blog</a></li>
+                            <li class="fadeInDown animated d2"><a href="/" menuid="1" followlink="true">Blog</a></li>
                             <li class="fadeInDown animated d2"><a href="/contact" menuid="1" followlink="true">Contact Us</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->

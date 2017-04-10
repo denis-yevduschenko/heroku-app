@@ -169,75 +169,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4 col-md-3 section-first">
-        <div class="panel-group">
-            <div class="panel panel-success" ng-show="choosenAdditives.length || search.type || search.roasted || search.cupSize || search.price" ng-mouseover="showCount()" ng-mouseleave="hideCount()">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        Result
-                    </h4>
-                </div>
-                <div class="panel-body">
-                    <div class="section-result">
-                        <div class="result-row" ng-show="choosenAdditives.length">
-                            <div class="col-xs-3">
-                                <div class="row">
-                                    <i class="fa fa-tag" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <p>{{choosenAdditives}}</p>
-                            </div>
-                        </div>
-                        <div class="result-row" ng-show="search.type">
-                            <div class="col-xs-3">
-                                <div class="row">
-                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <p>{{search.type}}</p>
-                            </div>
-                        </div>
-                        <div class="result-row" ng-show="search.roasted">
-                            <div class="col-xs-3">
-                                <div class="row">
-                                    <i class="fa fa-free-code-camp" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <p>{{search.roasted}}</p>
-                            </div>
-                        </div>
-                        <div class="result-row" ng-show="search.cupSize">
-                            <div class="col-xs-3">
-                                <div class="row">
-                                    <i class="fa fa-coffee" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <p>{{search.cupSize}}</p>
-                            </div>
-                        </div>
-                        <div class="result-row" ng-show="search.price">
-                            <div class="col-xs-3">
-                                <div class="row">
-                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-xs-9">
-                                <p>{{search.price}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-footer result-footer">
-                    <p class="count">Current items: {{filteredList.length}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <result search="search" chosen="chosenAdditives" quantity="filteredList.length"></result>
     <div class="container-fluid section-second">
         <div class="col-xs-6">
             <!--<div ng-repeat="item in coffee">-->
