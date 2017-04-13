@@ -1,0 +1,20 @@
+.error {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error-code {
+    bottom: 60%;
+    color: #0268a6;
+    font-size: 280px;
+    line-height: 350px;
+}
+
+.error-desc {
+    font-size: 14px;
+    color: #36424c;
+}
+
+.error-code a{
+    opacity: 1;
+}

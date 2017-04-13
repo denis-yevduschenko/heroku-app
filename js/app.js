@@ -1,10 +1,6 @@
-var CoffeenatorApp = angular.module("CoffeenatorApp", ['ngRoute', 'MyHttp']);
+var CoffeenatorApp = angular.module("CoffeenatorApp", ['ngRoute', 'ngAnimate', 'ng-fx', 'MyHttp']);
 
-CoffeenatorApp.config(function($routeProvider, $locationProvider){
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
+CoffeenatorApp.config(function($routeProvider){
     $routeProvider
         .when('/', {
             templateUrl: 'templates/home.html',
@@ -17,9 +13,12 @@ CoffeenatorApp.config(function($routeProvider, $locationProvider){
             templateUrl: 'templates/contact.html',
             controller: 'ContactController'
         })
+        .when('/404', {
+            templateUrl: 'templates/404.html'
+        })
         .otherwise({
-            redirectTo: '/',
-            controller: 'MainController'
+            redirectTo: '/404',
+            controller: 'ErrorPageController'
         });
 });
 
