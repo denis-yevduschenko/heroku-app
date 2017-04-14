@@ -18,3 +18,17 @@
 .error-code a{
     opacity: 1;
 }
+
+.error i.fa-warning:hover, .error .error-code:hover{
+    color: #a52026;
+}
+
+.error-code {
+    -webkit-transition: width 2s, height 2s, -webkit-transform 1s; /* Safari */
+    transition: width 2s, height 2s, transform 1s;
+}
+
+.error:hover .error-code {
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
