@@ -238,5 +238,45 @@
 		],
 		"price": "1$",
 		"cupSize": "medium"
+	},
+	{
+		"id": 1013,
+		"name": "Dominique",
+		"type": "Ground coffee",
+		"imageMilling": "images/type/milling.jpg",
+		"composition": "100/0",
+		"roasted": "Light roast",
+		"imageUrl": "images/dominique-1.jpg",
+		"description": "Благородный и выдержанный бленд ТМ «Dominique» удивит Вас сбалансированным вкусом, ведь в нём сочетаются уловимая кислинка и приятная горчинка. Для составления купажа были подобраны яркие сорта арабики из Латинской Америки, Африки и Азии. Насладитесь непревзойдённым ароматом, который создаст атмосферу парижского кафе.",
+		"sourness": 4,
+		"bitterness": 2,
+		"fortress": 2,
+		"saturation": 5,
+		"url": "https://grusha.ua/catalog/molotyy_kofe/dominique_arabica_blend_molotyy/",
+		"combined": [
+			{"id": 1, "taste":"Alcohol"}
+		],
+		"price": "2$",
+		"cupSize": "tall"
+	},
+	{
+		"id": 1014,
+		"name": "Mocassino",
+		"type": "Coffee beans",
+		"imageMilling": "images/type/beans.jpg",
+		"composition": "50/50",
+		"roasted": "Medium roast",
+		"imageUrl": "images/mocassino-1.jpg",
+		"description": "Бленд ТМ «Mocassino» – это кофе, отличное сочетание сортов благородной арабики и крепкой робусты, впечатляет своим насыщенным ароматом в сочетании с ярким вкусом, наполненным нотками шоколада и какао. Кофе для людей, которые преодолевают все препятствия.",
+		"sourness": 2,
+		"bitterness": 3,
+		"fortress": 5,
+		"saturation": 5,
+		"url": "https://grusha.ua/catalog/zernovoy_kofe/mocassino_zernovoy/",
+		"combined": [
+			{"id": 1, "taste":"Vanilla"}
+		],
+		"price": "2$",
+		"cupSize": "medium"
 	}
 ]
