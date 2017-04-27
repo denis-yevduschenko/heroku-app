@@ -73,6 +73,13 @@ draw.on('click', function() {
     if (vx === 0 && vy === 0) {
         vx = Math.random() * 600 - 350;
         vy = Math.random() * 600 - 350;
+
+        if (vx < 50 && vx >= 0){
+            vx += 50;
+        }
+        if (vx > -50 && vx < 0){
+            vx -= 50;
+        }
     }
 });
 
@@ -121,7 +128,16 @@ function update(dt) {
         vy = (cy - ((vx < 0 ? paddleLeftY : paddleRightY) + paddleHeight/2)) * 7; // magic factor
 
         // make the ball faster on hit
-        vx = -vx * 1.05;
+        if (Math.abs(vx) < 150) {
+            vx = -vx * 1.5;
+        } else if (Math.abs(vx) < 250){
+            vx = -vx * 1.1;
+        } else {
+            vx = -vx * 1.05;
+        }
+
+        console.log(Math.abs(vx));
+
     }
 
     // move player paddle
@@ -210,20 +226,13 @@ function boom() {
 }
 
 function resetGame() {
-    // reset speed values
-    vx = 0;
-    vy = 0;
+
+    reset();
+
     playerRight = 0;
     playerLeft = 0;
 
     scoreLeft.text(playerLeft + '');
     scoreRight.text(playerRight + '');
-
-    // position the ball back in the middle
-    ball.animate(100).center(width / 2, height / 2);
-
-    // reset the position of the paddles
-    paddleLeft.animate(100).cy(height / 2);
-    paddleRight.animate(100).cy(height / 2);
 }
 
