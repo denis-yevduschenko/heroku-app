@@ -1,6 +1,6 @@
 <div class="container">
     <div class="col-xs-12 section-top">
-        <h1>Coffeenator has <span class="label label-info">{{coffee.length}}</span> items of coffee</h1>
+        <h1>Coffeenator has <span class="label label-info">{{mainCtrl.coffee.length}}</span> items of coffee</h1>
         <hr>
         <h4>Which one is right for you?</h4>
         <h4>Answer the questions below to discover your ideal coffee.</h4>
@@ -21,8 +21,8 @@
                     <div class="panel-body">
                         <h4>What flavors do you prefer to add in coffee?</h4>
                         <div class="row">
-                            <div ng-repeat="additive in additives">
-                                <flavor-additives additive="additive" choosen="chooseAdditive(additive)"></flavor-additives>
+                            <div ng-repeat="additive in mainCtrl.additives">
+                                <flavor-additives additive="additive" choosen="mainCtrl.chooseAdditive(additive)"></flavor-additives>
                             </div>
                         </div>
                     </div>
@@ -42,12 +42,12 @@
                             <form name="typeOfCoffeeForm">
                                 <ul>
                                     <li>
-                                        <input type="radio" id="type-gr" ng-model="search.type" value="Ground coffee">
+                                        <input type="radio" id="type-gr" ng-model="mainCtrl.search.type" value="Ground coffee">
                                         <label for="type-gr">Ground coffee</label>
                                         <div class="check"></div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="type-be" ng-model="search.type" value="Coffee beans">
+                                        <input type="radio" id="type-be" ng-model="mainCtrl.search.type" value="Coffee beans">
                                         <label for="type-be">Coffee beans</label>
                                         <div class="check"><div class="inside"></div></div>
                                     </li>
@@ -71,17 +71,17 @@
                             <form name="strong">
                                 <ul>
                                     <li>
-                                        <input type="radio" id="str-1" ng-model="search.roasted" value="Light roast">
+                                        <input type="radio" id="str-1" ng-model="mainCtrl.search.roasted" value="Light roast">
                                         <label for="str-1">Mild taste and aroma</label>
                                         <div class="check"></div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="str-2" ng-model="search.roasted" value="Medium roast">
+                                        <input type="radio" id="str-2" ng-model="mainCtrl.search.roasted" value="Medium roast">
                                         <label for="str-2">Medium taste and aroma</label>
                                         <div class="check"><div class="inside"></div></div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="str-3" ng-model="search.roasted" value="Heavy roast">
+                                        <input type="radio" id="str-3" ng-model="mainCtrl.search.roasted" value="Heavy roast">
                                         <label for="str-3">Strong taste and aroma</label>
                                         <div class="check"><div class="inside"></div></div>
                                     </li>
@@ -105,19 +105,19 @@
                             <form name="served">
                                 <ul>
                                     <li>
-                                        <input type="radio" id="cup-1" ng-model="search.cupSize" value="short">
+                                        <input type="radio" id="cup-1" ng-model="mainCtrl.search.cupSize" value="short">
                                         <label for="cup-1">A Short shot</label>
                                         <div class="check"></div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="cup-2" ng-model="search.cupSize" value="medium">
+                                        <input type="radio" id="cup-2" ng-model="mainCtrl.search.cupSize" value="medium">
                                         <label for="cup-2">A medium sized cup</label>
                                         <div class="check">
                                             <div class="inside"></div>
                                         </div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="cup-3" ng-model="search.cupSize" value="tall">
+                                        <input type="radio" id="cup-3" ng-model="mainCtrl.search.cupSize" value="tall">
                                         <label for="cup-3">A tall cup full</label>
                                         <div class="check">
                                             <div class="inside"></div>
@@ -143,19 +143,19 @@
                             <form name="served">
                                 <ul>
                                     <li>
-                                        <input type="radio" id="price-1" ng-model="search.price" value="1$">
+                                        <input type="radio" id="price-1" ng-model="mainCtrl.search.price" value="1$">
                                         <label for="price-1">$</label>
                                         <div class="check"></div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="price-2" ng-model="search.price" value="2$">
+                                        <input type="radio" id="price-2" ng-model="mainCtrl.search.price" value="2$">
                                         <label for="price-2">$$</label>
                                         <div class="check">
                                             <div class="inside"></div>
                                         </div>
                                     </li>
                                     <li>
-                                        <input type="radio" id="price-3" ng-model="search.price" value="3$">
+                                        <input type="radio" id="price-3" ng-model="mainCtrl.search.price" value="3$">
                                         <label for="price-3">$$$</label>
                                         <div class="check">
                                             <div class="inside"></div>
@@ -169,14 +169,16 @@
             </div>
         </div>
     </div>
-    <result search="search" chosen="chosenAdditives" quantity="filteredList.length"></result>
+
+    <result search="mainCtrl.search" chosen="mainCtrl.chosenAdditives" quantity="mainCtrl.filteredList.length"></result>
+
     <div class="container-fluid section-second">
         <div class="col-xs-6">
             <!--<div ng-repeat="item in coffee">-->
-            <div class="col-xs-12 col-sm-6" ng-repeat="item in filteredList = (filteredCoffee(coffee) | filter:search)">
-                <item-info info="item" on-click="zoomItem(item)"></item-info>
+            <div class="col-xs-12 col-sm-6" ng-repeat="item in mainCtrl.filteredList = (mainCtrl.filteredCoffee(coffee) | filter:mainCtrl.search)">
+                <item-info info="item" on-click="mainCtrl.zoomItem(item)"></item-info>
             </div>
         </div>
-        <current-item item="currentZoomItem" close="hideZoomItem()" ng-show="currentZoomItem"></current-item>
+        <current-item item="mainCtrl.currentZoomItem" close="mainCtrl.hideZoomItem()" ng-show="mainCtrl.currentZoomItem"></current-item>
     </div>
 </div>

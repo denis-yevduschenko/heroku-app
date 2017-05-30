@@ -2,12 +2,14 @@
     'use strict';
     angular
         .module("CoffeenatorApp")
-        .directive('footer', function() {
-            return {
-                restrict: 'E',
-                scope: {
-                },
-                templateUrl: 'js/directives/footer.html'
-            };
-        });
+        .directive('footer', footer);
+
+    function footer() {
+        return {
+            restrict: 'E',
+            scope: {
+            },
+            templateUrl: 'js/directives/footer.html'
+        };
+    }
 })();

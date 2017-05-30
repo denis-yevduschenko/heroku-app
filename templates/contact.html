@@ -1,4 +1,4 @@
-<div class="container contact-us" ng-controller="ContactController">
+<div class="container contact-us" ng-controller="ContactController as contactCtrl">
     <div class="row">
         <div class="col-xs-12 col-md-offset-3 col-md-6 contact-us-form">
             <h2>Contact</h2>
@@ -9,7 +9,7 @@
                         <label class="control-label">Name</label>
                     </div>
                     <div class="col-xs-12 col-md-9">
-                        <input ng-model="form.name" name="name" type="text" class="span6" placeholder="Enter your name..." required />
+                        <input ng-model="contactCtrl.form.name" name="name" type="text" class="span6" placeholder="Enter your name..." required />
                     </div>
                     <div class="col-xs-12 col-md-offset-3 col-md-9">
                         <span ng-show="contactForm.name.$error.required" class="help-inline">Required</span>
@@ -20,7 +20,7 @@
                         <label class="control-label">Email</label>
                     </div>
                     <div class="col-xs-12 col-md-9">
-                        <input ng-model="form.email" name="email" type="email" class="span6" placeholder="Enter your email..." required />
+                        <input ng-model="contactCtrl.form.email" name="email" type="email" class="span6" placeholder="Enter your email..." required />
                     </div>
                     <div class="col-xs-12 col-md-offset-3 col-md-9">
                         <span ng-show="contactForm.email.$error.required" class="help-inline">Required</span>
@@ -32,7 +32,7 @@
                         <label class="control-label">Website</label>
                     </div>
                     <div class="col-xs-12 col-md-9">
-                        <input ng-model="form.website" name="website" type="text" class="span6" placeholder="Enter your website..." />
+                        <input ng-model="contactCtrl.form.website" name="website" type="text" class="span6" placeholder="Enter your website..." />
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
                         <label class="control-label" for="subjectField">Subject</label>
                     </div>
                     <div class="col-sm-12 col-md-9">
-                        <select ng-model="form.subject" name="subject" id="subjectField" class="span6" required>
+                        <select ng-model="contactCtrl.form.subject" name="subject" id="subjectField" class="span6" required>
                             <option>Error</option>
                             <option>Enhancement</option>
                             <option>Question</option>
@@ -66,8 +66,8 @@
                 </div>
 
                 <div class="form-actions">
-                    <button ng-click="sendForm()" ng-disabled="contactForm.$invalid || submitButtonDisabled" class="btn btn-primary">Send message &raquo;</button>
-                    <button ng-click="resetForm()" class="btn btn-danger">Reset</button>
+                    <button ng-click="contactCtrl.sendForm()" ng-disabled="contactForm.$invalid || submitButtonDisabled" class="btn btn-primary">Send message &raquo;</button>
+                    <button ng-click="contactCtrl.resetForm()" class="btn btn-danger">Reset</button>
                 </div>
             </form>
         </div>

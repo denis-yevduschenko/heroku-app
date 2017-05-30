@@ -1,61 +1,67 @@
 (function (){
     angular
         .module("CoffeenatorApp")
-        .controller('MainController', ['$scope', '$http', '$location', 'MyHttpData', function($scope, $http, $location, MyHttpData) {
-            $scope.currentZoomItem = '';
-            $scope.chosenAdditives = '';
-            $scope.filterBy = [];
-            $scope.typeOfCoffee = '';
-            $scope.roast = '';
-            $scope.cupSize = '';
+        .controller('MainController', ['$scope', '$location', 'MyHttpData', MainController]);
 
-            $scope.coffee = '';
-            $scope.additives = '';
-            getCoffee();
-            getAdditives();
+    function MainController($scope, $location, MyHttpData) {
+        var vm = this;
 
-            function getCoffee() {
-                MyHttpData.getCoffee().then(function (coffee) {
-                    $scope.coffee = coffee.data;
-                });
-            }
+        vm.currentZoomItem = '';
+        vm.chosenAdditives = '';
+        vm.filterBy = [];
 
-            function getAdditives() {
-                MyHttpData.getAdditives().then(function (additives) {
-                    $scope.additives = additives.data;
-                });
-            }
+        vm.coffee = '';
+        vm.additives = '';
+        getCoffee();
+        getAdditives();
 
-            $scope.zoomItem = function (item) {
-                $scope.currentZoomItem = item;
-            };
+        vm.chooseAdditive = chooseAdditive;
+        vm.zoomItem = zoomItem;
+        vm.hideZoomItem = hideZoomItem;
+        vm.filteredCoffee = filteredCoffee;
 
-            $scope.hideZoomItem = function () {
-                $scope.currentZoomItem = '';
-            };
-
-            $scope.chooseAdditive = function (additive) {
-                var index = $scope.chosenAdditives.indexOf(additive.combined);
-                if (index > 0){
-                    /*del string from result block*/
-                    $scope.chosenAdditives = $scope.chosenAdditives.substring(0, index) + $scope.chosenAdditives.substring(index + additive.combined.length);
-                    /*del additive from filter array*/
-                    arrayIndex = $scope.filterBy.indexOf(additive.combined);
-                    if (arrayIndex > -1) {
-                        $scope.filterBy.splice(arrayIndex, 1);
-                    }
-                } else {
-                    /*add string to result block*/
-                    $scope.chosenAdditives += " " + additive.combined;
-                    /*add additive to filter array*/
-                    $scope.filterBy.push(additive.combined);
+        function chooseAdditive(additive) {
+            var index = vm.chosenAdditives.indexOf(additive.combined);
+            if (index > 0){
+                /*del string from result block*/
+                vm.chosenAdditives = vm.chosenAdditives.substring(0, index) + vm.chosenAdditives.substring(index + additive.combined.length);
+                /*del additive from filter array*/
+                arrayIndex = vm.filterBy.indexOf(additive.combined);
+                if (arrayIndex > -1) {
+                    vm.filterBy.splice(arrayIndex, 1);
                 }
-            };
+            } else {
+                /*add string to result block*/
+                vm.chosenAdditives += " " + additive.combined;
+                /*add additive to filter array*/
+                vm.filterBy.push(additive.combined);
+            }
+        }
 
-            $scope.filteredCoffee = function () {
-                return $scope.coffee.filter(function (item) {
-                    return $scope.filterBy.indexOf(item.combined[0].taste) !== -1;
-                });
-            };
-        }]);
+        function zoomItem(item) {
+            vm.currentZoomItem = item;
+        }
+
+        function hideZoomItem() {
+            vm.currentZoomItem = '';
+        }
+
+        function filteredCoffee() {
+            return vm.coffee.filter(function (item) {
+                return vm.filterBy.indexOf(item.combined[0].taste) !== -1;
+            });
+        }
+
+        function getCoffee() {
+            MyHttpData.getCoffee().then(function (coffee) {
+                vm.coffee = coffee.data;
+            });
+        }
+
+        function getAdditives() {
+            MyHttpData.getAdditives().then(function (additives) {
+                vm.additives = additives.data;
+            });
+        }
+    }
 })();

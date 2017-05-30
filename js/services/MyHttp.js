@@ -2,7 +2,9 @@
     'use strict';
     angular
         .module('MyHttp', [])
-        .factory('MyHttpData', ['$http', function ($http) {
+        .factory('MyHttpData', ['$http', MyHttpData]);
+
+        function MyHttpData($http) {
             var items = {};
 
             items.getCoffee = function () {
@@ -14,5 +16,5 @@
             };
 
             return items;
-        }]);
+        }
 })();

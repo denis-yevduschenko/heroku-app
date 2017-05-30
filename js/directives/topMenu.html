@@ -1,6 +1,6 @@
 <!--menu-->
 <div class="header_top"></div>
-<div class="ctrl" ng-controller="MenuController">
+<div class="ctrl" ng-controller="MenuController as menuCtrl">
     <div class="menu">
         <header class="container">
             <div class="navbar navbar-inner">
@@ -17,7 +17,7 @@
                     <div class="collapse navbar-collapse pull-right" id="main-menu">
                         <ul class="nav">
                             <li class="fadeInDown animated d1 "><a href="#!/" class="active" id="home" menuid="0" followlink="true">Home</a></li>
-                            <li class="fadeInDown animated d2"><a ng-click="reloadRoute()" ng-mouseenter="hover = true" ng-mouseleave="hover = false"><i class="fa fa-refresh fa-3x"  ng-class="{'fa-spin': hover}" aria-hidden="true"></i></a></li>
+                            <li class="fadeInDown animated d2"><a ng-click="menuCtrl.reloadRoute()" ng-mouseenter="hover = true" ng-mouseleave="hover = false"><i class="fa fa-refresh fa-3x"  ng-class="{'fa-spin': hover}" aria-hidden="true"></i></a></li>
                             <li class="fadeInDown animated d2"><a href="#!/about" menuid="1" followlink="true">About</a></li>
                             <li class="fadeInDown animated d2"><a href="#!/" menuid="1" followlink="true">Blog</a></li>
                             <li class="fadeInDown animated d2"><a href="#!/contact" menuid="1" followlink="true">Contact Us</a></li>

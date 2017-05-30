@@ -142,8 +142,6 @@
                 vx = -vx * 1.05;
             }
 
-            console.log(Math.abs(vx));
-
         }
 
         // move player paddle

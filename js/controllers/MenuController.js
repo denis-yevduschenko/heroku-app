@@ -1,11 +1,16 @@
 (function (){
+    'use strict';
     angular
         .module("CoffeenatorApp")
-        .controller('MenuController', ['$scope', '$window', function($scope, $window) {
+        .controller('MenuController', ['$window', MenuController]);
 
-            $scope.reloadRoute = function() {
-                $window.location.reload();
-            };
+    function MenuController($window) {
+        var mv = this;
 
-        }]);
+        mv.reloadRoute = reloadRoute;
+
+        function reloadRoute() {
+            $window.location.reload();
+        }
+    }
 })();

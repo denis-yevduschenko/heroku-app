@@ -1,11 +1,10 @@
 (function (){
+    'use strict';
     angular
         .module("CoffeenatorApp")
-        .controller("ErrorPageController", ['$scope', function($scope) {
-            $scope.isHidden = false;
+        .controller("ErrorPageController", [ErrorPageController]);
 
-            $scope.toggle = function () {
-                $scope.isHidden = !$scope.isHidden;
-            };
-        }]);
+    function ErrorPageController() {
+        var mv = this;
+    }
 })();
