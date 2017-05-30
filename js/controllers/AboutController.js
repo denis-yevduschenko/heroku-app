@@ -1,3 +1,5 @@
-CoffeenatorApp.controller('AboutController',['$scope', function($scope) {
-
-}]);
+(function (){
+    angular
+        .module("CoffeenatorApp")
+        .controller('AboutController',['$scope', function($scope) {}]);
+})();
